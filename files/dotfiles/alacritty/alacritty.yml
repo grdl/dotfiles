@@ -1,0 +1,17 @@
+font:
+  normal:
+    family: monospace
+    style: Regular
+
+  size: 10
+
+shell:
+  program: /usr/bin/fish
+  args:
+    - -c
+    - tmux new-session -A -s main
+
+colors:
+  primary:
+    background: '0x222222'
+    foreground: '0xdedede'

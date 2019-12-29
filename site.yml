@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+  gather_facts: no
 
   vars:
     snap_classic_pkgs:
@@ -13,6 +14,11 @@
       - fish
       - alacritty
       - tmux
+    
+    dotfiles:
+      - { src: dotfiles/git/gitconfig,            dest: ~/.gitconfig }
+      - { src: dotfiles/git/gitignore_global,     dest: ~/.gitignore_global }
+      - { src: dotfiles/alacritty/alacritty.yml,  dest: ~/.config/alacritty/alacritty.yml }
 
   tasks:
   - name: Ensure workspace directory
@@ -43,11 +49,16 @@
       update_cache: yes
     loop: "{{ apt_pks }}"
 
+  - name: Ensure dotfiles dest dirs exists
+    file:
+      path: "{{ item.dest | dirname }}"
+      state: directory
+    loop: "{{ dotfiles }}"
+    tags: dotfiles
+
   - name: Copy dotfiles
     copy:
       src: "{{ item.src }}"
       dest: "{{ item.dest }}"
-    loop:
-      - { src: dotfiles/git/gitconfig, dest: ~/.gitconfig }
-      - { src: dotfiles/git/gitignore_global, dest: ~/.gitignore_global }
+    loop: "{{ dotfiles }}"
     tags: dotfiles

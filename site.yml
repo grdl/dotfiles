@@ -11,6 +11,7 @@
       - ppa:mmstick76/alacritty
 
     apt_pkgs:
+      - curl
       - fish
       - alacritty
       - tmux
@@ -21,6 +22,7 @@
       - { src: dotfiles/git/gitignore_global,     dest: ~/.gitignore_global }
       - { src: dotfiles/alacritty/alacritty.yml,  dest: ~/.config/alacritty/alacritty.yml }
       - { src: dotfiles/tmux/tmux.conf,           dest: ~/.tmux.conf }
+      - { src: dotfiles/fish/,                    dest: ~/.config/fish/ }
 
   tasks:
   - name: Ensure workspace directory
@@ -63,4 +65,10 @@
       src: "{{ item.src }}"
       dest: "{{ item.dest }}"
     loop: "{{ dotfiles }}"
+    tags: dotfiles
+
+  # Running "fisher" without any arguments will install/update packages defined in fishfile
+  - name: Install fisher packages
+    command: fish -c fisher
+    changed_when: false
     tags: dotfiles

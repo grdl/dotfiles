@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: Ensure workspace directory
+    file:
+      path: ~/workspace
+      state: directory
+      
+  - name: Install snaps
+    become: yes
+    snap:
+      name: "{{ item }}"
+      classic: yes
+    loop:
+      - code	

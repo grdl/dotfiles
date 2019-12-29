@@ -1,6 +1,18 @@
 ---
 - hosts: localhost
   connection: local
+
+  vars:
+    snap_classic_pkgs:
+      - code
+
+    apt_repos:
+      - ppa:mmstick76/alacritty
+
+    apt_pks:
+      - fish
+      - alacritty
+
   tasks:
   - name: Ensure workspace directory
     file:
@@ -12,5 +24,20 @@
     snap:
       name: "{{ item }}"
       classic: yes
-    loop:
-      - code	
+    loop: "{{ snap_classic_pkgs }}"	
+
+  - name: Add apt repos
+    become: yes
+    apt_repository:
+      repo: "{{ item }}"
+      state: present
+      update_cache: yes
+    loop: "{{ apt_repos }}" 
+      
+  - name: Install apt packages
+    become: yes
+    apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: yes
+    loop: "{{ apt_pks }}"

@@ -83,3 +83,12 @@
     command: fish -c fisher
     changed_when: false
     tags: dotfiles
+
+  # TODO: find a way to make it idempotent
+  # HACK! Running "fisher" will overwrite the fish_prompt to the default one used by the "pure" package
+  # We need to overwrite it back to "our" promt so that kubectl context is included
+  - name: Overwrite fish_prompt
+    copy:
+      src: dotfiles/fish/functions/fish_prompt.fish
+      dest: ~/.config/fish/functions/fish_prompt.fish
+    tags: dotfiles

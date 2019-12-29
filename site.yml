@@ -12,6 +12,7 @@
     apt_pks:
       - fish
       - alacritty
+      - tmux
 
   tasks:
   - name: Ensure workspace directory
@@ -41,3 +42,12 @@
       state: present
       update_cache: yes
     loop: "{{ apt_pks }}"
+
+  - name: Copy dotfiles
+    copy:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+    loop:
+      - { src: dotfiles/git/gitconfig, dest: ~/.gitconfig }
+      - { src: dotfiles/git/gitignore_global, dest: ~/.gitignore_global }
+    tags: dotfiles

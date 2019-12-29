@@ -10,3 +10,8 @@ pip3 install -r requirements.txt
 ```
 ansible-playbook site.yml -K
 ```
+
+Run only the dotfiles tasks:
+```
+ansible-playbook site.yml --tags dotfiles
+```

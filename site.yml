@@ -19,6 +19,7 @@
       - { src: dotfiles/git/gitconfig,            dest: ~/.gitconfig }
       - { src: dotfiles/git/gitignore_global,     dest: ~/.gitignore_global }
       - { src: dotfiles/alacritty/alacritty.yml,  dest: ~/.config/alacritty/alacritty.yml }
+      - { src: dotfiles/tmux/tmux.conf,           dest: ~/.tmux.conf }
 
   tasks:
   - name: Ensure workspace directory

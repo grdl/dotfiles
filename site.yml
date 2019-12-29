@@ -6,6 +6,7 @@
   vars:
     snap_classic_pkgs:
       - code
+      - kubectl
 
     apt_repos:
       - ppa:mmstick76/alacritty
@@ -17,6 +18,10 @@
       - tmux
       - tig
     
+    deb_pkgs:
+      - https://storage.googleapis.com/minikube/releases/latest/minikube_1.6.2.deb
+      - https://download.virtualbox.org/virtualbox/6.1.0/virtualbox-6.1_6.1.0-135406~Ubuntu~bionic_amd64.deb
+          
     dotfiles:
       - { src: dotfiles/git/gitconfig,            dest: ~/.gitconfig }
       - { src: dotfiles/git/gitignore_global,     dest: ~/.gitignore_global }
@@ -52,6 +57,12 @@
       state: present
       update_cache: yes
     loop: "{{ apt_pkgs }}"
+
+  - name: Install deb packages
+    become: yes
+    apt:
+      deb: "{{ item }}"
+    loop: "{{ deb_pkgs }}"
 
   - name: Ensure dotfiles dest dirs exists
     file:

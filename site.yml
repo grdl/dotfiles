@@ -21,19 +21,31 @@
     deb_pkgs:
       - https://storage.googleapis.com/minikube/releases/latest/minikube_1.6.2.deb
       - https://download.virtualbox.org/virtualbox/6.1.0/virtualbox-6.1_6.1.0-135406~Ubuntu~bionic_amd64.deb
-          
+
+    git_repos:
+      - { repo: "https://github.com/ahmetb/kubectx", version: v0.7.1 }
+      - { repo: "https://github.com/johanhaleby/kubetail", version: 1.6.10 }
+      - { repo: "https://github.com/fboender/multi-git-status", version: HEAD }
+
     dotfiles:
-      - { src: dotfiles/git/gitconfig,            dest: ~/.gitconfig }
-      - { src: dotfiles/git/gitignore_global,     dest: ~/.gitignore_global }
-      - { src: dotfiles/alacritty/alacritty.yml,  dest: ~/.config/alacritty/alacritty.yml }
-      - { src: dotfiles/tmux/tmux.conf,           dest: ~/.tmux.conf }
-      - { src: dotfiles/fish/,                    dest: ~/.config/fish/ }
+      - { src: dotfiles/git/gitconfig, dest: ~/.gitconfig }
+      - { src: dotfiles/git/gitignore_global, dest: ~/.gitignore_global }
+      - { src: dotfiles/alacritty/alacritty.yml, dest: ~/.config/alacritty/alacritty.yml }
+      - { src: dotfiles/tmux/tmux.conf, dest: ~/.tmux.conf }
+      - { src: dotfiles/fish/, dest: ~/.config/fish/ }
+      - { src: ~/workspace/tools/kubectx/kubectx, dest: ~/.local/bin/kubectx }
+      - { src: ~/workspace/tools/kubectx/kubens, dest: ~/.local/bin/kubens }
+      - { src: ~/workspace/tools/kubetail/kubetail, dest: ~/.local/bin/kubetail }
+      - { src: ~/workspace/tools/multi-git-status/mgitstatus, dest: ~/.local/bin/mgitstatus }
 
   tasks:
   - name: Ensure workspace directory
     file:
-      path: ~/workspace
+      path: "{{ item }}"
       state: directory
+    loop:
+      - ~/workspace
+      - ~/workspace/tools
       
   - name: Install snaps
     become: yes
@@ -64,6 +76,14 @@
       deb: "{{ item }}"
     loop: "{{ deb_pkgs }}"
 
+  - name: Clone git repos
+    git:
+      repo: "{{ item.repo }}"
+      version: "{{ item.version }}"
+      dest: "~/workspace/tools/{{ item.repo | basename }}"
+    loop: "{{ git_repos }}"
+    tags: test
+
   - name: Ensure dotfiles dest dirs exists
     file:
       path: "{{ item.dest | dirname }}"
@@ -75,6 +95,7 @@
     copy:
       src: "{{ item.src }}"
       dest: "{{ item.dest }}"
+      mode: preserve # preserve will give the same permissions as source, ie: executables will remain executable
     loop: "{{ dotfiles }}"
     tags: dotfiles
 

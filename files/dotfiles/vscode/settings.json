@@ -21,6 +21,7 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.shell.linux": "/usr/bin/fish",
   "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontSize": 13,
   "git.confirmSync": false,
   "git.autofetch": true,
   "files.autoSave": "onFocusChange",

@@ -1,0 +1,34 @@
+---
+- name: Check if "{{ item.src | basename }}" path is a directory
+  stat:
+    path: "{{ item.src }}"
+  register: src_path
+  tags: dotfiles
+
+- name: Symlink a single "{{ item.src | basename }}" file
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+    force: yes
+  when: src_path.stat.isdir is not defined or not src_path.stat.isdir
+  tags: dotfiles
+
+- name: List all files in "{{ item.src | basename }}"
+  find:
+    paths: "{{ item.src }}"
+  register: files_to_link
+  when: src_path.stat.isdir is defined and src_path.stat.isdir
+  tags: dotfiles
+
+- name: Symlink all files in "{{ item.src | basename }}"
+  file:
+    src: "{{ file_to_link.path }}"
+    dest: "{{ item.dest }}/{{ file_to_link.path | basename }}"
+    state: link
+    force: yes
+  loop: "{{ files_to_link.files }}"
+  loop_control:
+    loop_var: file_to_link
+  when: files_to_link.files is defined and (files_to_link.files | length > 0)
+  tags: dotfiles

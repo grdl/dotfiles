@@ -42,13 +42,18 @@
       - { repo: "https://github.com/johanhaleby/kubetail", version: 1.6.10 }
       - { repo: "https://github.com/fboender/multi-git-status", version: HEAD }
 
-    dotfiles:
-      - { src: dotfiles/git/gitconfig, dest: ~/.gitconfig }
-      - { src: dotfiles/git/gitignore_global, dest: ~/.gitignore_global }
-      - { src: dotfiles/alacritty/alacritty.yml, dest: ~/.config/alacritty/alacritty.yml }
-      - { src: dotfiles/tmux/tmux.conf, dest: ~/.tmux.conf }
-      - { src: dotfiles/fish/, dest: ~/.config/fish/ }
-      - { src: dotfiles/vscode/, dest: ~/.config/Code/User/ }
+    # If src is a file it will be symlinked to a dest
+    # If src is a directory, each file inside will be symlinked to a dest dir.
+    # This allows symlinking files into existing directories with other files not tracked by our dotfiles (eg: .config/fish/functions)
+    symlinks:
+      - { src: "{{ playbook_dir }}/files/dotfiles/git/gitconfig", dest: ~/.gitconfig }
+      - { src: "{{ playbook_dir }}/files/dotfiles/git/gitignore_global", dest: ~/.gitignore_global }
+      - { src: "{{ playbook_dir }}/files/dotfiles/alacritty/alacritty.yml", dest: ~/.config/alacritty/alacritty.yml }
+      - { src: "{{ playbook_dir }}/files/dotfiles/tmux/tmux.conf", dest: ~/.tmux.conf }
+      - { src: "{{ playbook_dir }}/files/dotfiles/fish", dest: ~/.config/fish }
+      - { src: "{{ playbook_dir }}/files/dotfiles/fish/completions", dest: ~/.config/fish/completions }
+      - { src: "{{ playbook_dir }}/files/dotfiles/fish/functions", dest: ~/.config/fish/functions }
+      - { src: "{{ playbook_dir }}/files/dotfiles/vscode", dest: ~/.config/Code/User }
       - { src: ~/workspace/tools/kubectx/kubectx, dest: ~/.local/bin/kubectx }
       - { src: ~/workspace/tools/kubectx/kubens, dest: ~/.local/bin/kubens }
       - { src: ~/workspace/tools/kubetail/kubetail, dest: ~/.local/bin/kubetail }
@@ -118,15 +123,12 @@
       file:
         path: "{{ item.dest | dirname }}"
         state: directory
-      loop: "{{ dotfiles }}"
+      loop: "{{ symlinks }}"
       tags: dotfiles
 
-    - name: Copy dotfiles
-      copy:
-        src: "{{ item.src }}"
-        dest: "{{ item.dest }}"
-        mode: preserve # preserve will give the same permissions as source, ie: executables will remain executable
-      loop: "{{ dotfiles }}"
+    - name: Create symlinks
+      include_tasks: symlink.yml
+      loop: "{{ symlinks }}"
       tags: dotfiles
 
     # Running "fisher" without any arguments will install/update packages defined in fishfile
@@ -139,7 +141,9 @@
     # HACK! Running "fisher" will overwrite the fish_prompt to the default one used by the "pure" package
     # We need to overwrite it back to "our" promt so that kubectl context is included
     - name: Overwrite fish_prompt
-      copy:
-        src: dotfiles/fish/functions/fish_prompt.fish
+      file:
+        src: "{{ playbook_dir }}/files/dotfiles/fish/functions/fish_prompt.fish"
         dest: ~/.config/fish/functions/fish_prompt.fish
+        state: link
+        force: yes
       tags: dotfiles

@@ -26,17 +26,20 @@
   "git.confirmSync": false,
   "git.autofetch": true,
   "go.gopath": "~/go",
+  "go.useLanguageServer": true,
+  "sync.gist": "4ec9696e8b13a90eee3860cfd07aba75",
+  "sync.quietSync": true,
+  "sync.autoUpload": true,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontSize": 13,
+  "window.newWindowDimensions": "maximized",
   "workbench.colorCustomizations": {
     "statusBar.background": "#353535",
     "statusBar.foreground": "#dddddd"
   },
   "workbench.colorTheme": "Monokai Dimmed",
   "workbench.startupEditor": "newUntitledFile",
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.shell.linux": "/usr/bin/fish",
-  "terminal.integrated.fontFamily": "monospace",
-  "terminal.integrated.fontSize": 13,
   "yaml.format.printWidth": 160,
-  "window.newWindowDimensions": "maximized",
-  "go.useLanguageServer": true
 }

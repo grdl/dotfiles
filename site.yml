@@ -23,6 +23,7 @@
       - alacritty
       - tmux
       - tig
+      - vagrant
       # Docker dependencies:
       - apt-transport-https
       - ca-certificates

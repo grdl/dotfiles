@@ -42,6 +42,7 @@
       - { src: dotfiles/alacritty/alacritty.yml, dest: ~/.config/alacritty/alacritty.yml }
       - { src: dotfiles/tmux/tmux.conf, dest: ~/.tmux.conf }
       - { src: dotfiles/fish/, dest: ~/.config/fish/ }
+      - { src: dotfiles/vscode/, dest: ~/.config/Code/User/ }
       - { src: ~/workspace/tools/kubectx/kubectx, dest: ~/.local/bin/kubectx }
       - { src: ~/workspace/tools/kubectx/kubens, dest: ~/.local/bin/kubens }
       - { src: ~/workspace/tools/kubetail/kubetail, dest: ~/.local/bin/kubetail }

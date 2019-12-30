@@ -1,0 +1,37 @@
+{
+  "editor.minimap.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.smoothScrolling": true,
+  "editor.suggestSelection": "first",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "editor.fontSize": 13,
+  "editor.fontFamily": "monospace",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#353535",
+    "statusBar.foreground": "#dddddd"
+  },
+  "cSpell.userWords": [
+    "gridarrow"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "workbench.colorTheme": "Monokai Dimmed",
+  "workbench.startupEditor": "newUntitledFile",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.integrated.fontFamily": "monospace",
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "files.associations": {
+    "Vagrantfile": "ruby",
+    "*.tfstate": "json"
+  }
+}

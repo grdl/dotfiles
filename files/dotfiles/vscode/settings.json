@@ -33,5 +33,6 @@
   "files.associations": {
     "Vagrantfile": "ruby",
     "*.tfstate": "json"
-  }
+  },
+  "yaml.format.printWidth": 160
 }

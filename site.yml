@@ -4,9 +4,14 @@
   gather_facts: no
 
   vars:
-    snap_classic_pkgs:
+    snap_pkgs:
       - code
       - kubectl
+      - go
+      - goland
+      - pycharm-professional
+      - postman
+      - terraform
 
     apt_repos:
       - ppa:mmstick76/alacritty
@@ -26,7 +31,7 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
-    
+
     deb_pkgs:
       - https://storage.googleapis.com/minikube/releases/latest/minikube_1.6.2.deb
       - https://download.virtualbox.org/virtualbox/6.1.0/virtualbox-6.1_6.1.0-135406~Ubuntu~bionic_amd64.deb
@@ -49,91 +54,91 @@
       - { src: ~/workspace/tools/multi-git-status/mgitstatus, dest: ~/.local/bin/mgitstatus }
 
   tasks:
-  - name: Ensure workspace directory
-    file:
-      path: "{{ item }}"
-      state: directory
-    loop:
-      - ~/workspace
-      - ~/workspace/tools
-      
-  - name: Install snaps
-    become: yes
-    snap:
-      name: "{{ item }}"
-      classic: yes
-    loop: "{{ snap_classic_pkgs }}"	
+    - name: Ensure workspace directory
+      file:
+        path: "{{ item }}"
+        state: directory
+      loop:
+        - ~/workspace
+        - ~/workspace/tools
 
-  # TODO: Should we move it to vars?
-  - name: Add Docker's apt key
-    become: yes
-    apt_key:
-      url: https://download.docker.com/linux/ubuntu/gpg
-      id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
-      state: present
+    - name: Install snaps
+      become: yes
+      snap:
+        name: "{{ item }}"
+        classic: yes
+      loop: "{{ snap_pkgs }}"
 
-  - name: Add apt repos
-    become: yes
-    apt_repository:
-      repo: "{{ item }}"
-      state: present
-      update_cache: yes
-    loop: "{{ apt_repos }}" 
-      
-  - name: Install apt packages
-    become: yes
-    apt:
-      name: "{{ item }}"
-      state: present
-      update_cache: yes
-    loop: "{{ apt_pkgs }}"
+    # TODO: Should we move it to vars?
+    - name: Add Docker's apt key
+      become: yes
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+        state: present
 
-  - name: Install deb packages
-    become: yes
-    apt:
-      deb: "{{ item }}"
-    loop: "{{ deb_pkgs }}"
+    - name: Add apt repos
+      become: yes
+      apt_repository:
+        repo: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop: "{{ apt_repos }}"
 
-  - name: Add user to docker group
-    become: yes
-    user:
-      name: "{{ lookup('env', 'USER') }}" 
-      groups: 'docker'
-      append: 'yes'
+    - name: Install apt packages
+      become: yes
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop: "{{ apt_pkgs }}"
 
-  - name: Clone git repos
-    git:
-      repo: "{{ item.repo }}"
-      version: "{{ item.version }}"
-      dest: "~/workspace/tools/{{ item.repo | basename }}"
-    loop: "{{ git_repos }}"
+    - name: Install deb packages
+      become: yes
+      apt:
+        deb: "{{ item }}"
+      loop: "{{ deb_pkgs }}"
 
-  - name: Ensure dotfiles dest dirs exists
-    file:
-      path: "{{ item.dest | dirname }}"
-      state: directory
-    loop: "{{ dotfiles }}"
-    tags: dotfiles
+    - name: Add user to docker group
+      become: yes
+      user:
+        name: "{{ lookup('env', 'USER') }}"
+        groups: "docker"
+        append: "yes"
 
-  - name: Copy dotfiles
-    copy:
-      src: "{{ item.src }}"
-      dest: "{{ item.dest }}"
-      mode: preserve # preserve will give the same permissions as source, ie: executables will remain executable
-    loop: "{{ dotfiles }}"
-    tags: dotfiles
+    - name: Clone git repos
+      git:
+        repo: "{{ item.repo }}"
+        version: "{{ item.version }}"
+        dest: "~/workspace/tools/{{ item.repo | basename }}"
+      loop: "{{ git_repos }}"
 
-  # Running "fisher" without any arguments will install/update packages defined in fishfile
-  - name: Install fisher packages
-    command: fish -c fisher
-    changed_when: false
-    tags: dotfiles
+    - name: Ensure dotfiles dest dirs exists
+      file:
+        path: "{{ item.dest | dirname }}"
+        state: directory
+      loop: "{{ dotfiles }}"
+      tags: dotfiles
 
-  # TODO: find a way to make it idempotent
-  # HACK! Running "fisher" will overwrite the fish_prompt to the default one used by the "pure" package
-  # We need to overwrite it back to "our" promt so that kubectl context is included
-  - name: Overwrite fish_prompt
-    copy:
-      src: dotfiles/fish/functions/fish_prompt.fish
-      dest: ~/.config/fish/functions/fish_prompt.fish
-    tags: dotfiles
+    - name: Copy dotfiles
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        mode: preserve # preserve will give the same permissions as source, ie: executables will remain executable
+      loop: "{{ dotfiles }}"
+      tags: dotfiles
+
+    # Running "fisher" without any arguments will install/update packages defined in fishfile
+    - name: Install fisher packages
+      command: fish -c fisher
+      changed_when: false
+      tags: dotfiles
+
+    # TODO: find a way to make it idempotent
+    # HACK! Running "fisher" will overwrite the fish_prompt to the default one used by the "pure" package
+    # We need to overwrite it back to "our" promt so that kubectl context is included
+    - name: Overwrite fish_prompt
+      copy:
+        src: dotfiles/fish/functions/fish_prompt.fish
+        dest: ~/.config/fish/functions/fish_prompt.fish
+      tags: dotfiles

@@ -93,6 +93,13 @@
       deb: "{{ item }}"
     loop: "{{ deb_pkgs }}"
 
+  - name: Add user to docker group
+    become: yes
+    user:
+      name: "{{ lookup('env', 'USER') }}" 
+      groups: 'docker'
+      append: 'yes'
+
   - name: Clone git repos
     git:
       repo: "{{ item.repo }}"

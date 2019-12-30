@@ -1,4 +1,7 @@
 {
+  "cSpell.userWords": [
+    "gridarrow"
+  ],
   "editor.minimap.enabled": true,
   "editor.formatOnSave": true,
   "editor.smoothScrolling": true,
@@ -8,22 +11,7 @@
   "editor.renderWhitespace": "all",
   "editor.fontSize": 13,
   "editor.fontFamily": "monospace",
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#353535",
-    "statusBar.foreground": "#dddddd"
-  },
-  "cSpell.userWords": [
-    "gridarrow"
-  ],
   "explorer.confirmDragAndDrop": false,
-  "workbench.colorTheme": "Monokai Dimmed",
-  "workbench.startupEditor": "newUntitledFile",
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.shell.linux": "/usr/bin/fish",
-  "terminal.integrated.fontFamily": "monospace",
-  "terminal.integrated.fontSize": 13,
-  "git.confirmSync": false,
-  "git.autofetch": true,
   "files.autoSave": "onFocusChange",
   "files.exclude": {
     "**/.classpath": true,
@@ -35,5 +23,20 @@
     "Vagrantfile": "ruby",
     "*.tfstate": "json"
   },
-  "yaml.format.printWidth": 160
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "go.gopath": "~/go",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#353535",
+    "statusBar.foreground": "#dddddd"
+  },
+  "workbench.colorTheme": "Monokai Dimmed",
+  "workbench.startupEditor": "newUntitledFile",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontSize": 13,
+  "yaml.format.printWidth": 160,
+  "window.newWindowDimensions": "maximized",
+  "go.useLanguageServer": true
 }

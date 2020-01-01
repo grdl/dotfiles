@@ -9,6 +9,7 @@
       - kubectl
       - go
       - goland
+      - hugo
       - pycharm-professional
       - postman
       - terraform

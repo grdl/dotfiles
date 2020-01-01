@@ -33,6 +33,8 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
+      # Laptop packages:
+      - pm-utils
 
     deb_pkgs:
       - https://storage.googleapis.com/minikube/releases/latest/minikube_1.6.2.deb

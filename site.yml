@@ -6,13 +6,13 @@
   vars:
     snap_pkgs:
       - code
-      - kubectl
       - go
       - goland
       - hugo
       - jq
-      - pycharm-professional
+      - kubectl
       - postman
+      - pycharm-professional
       - terraform
 
     apt_repos:
@@ -20,20 +20,21 @@
       - deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable
 
     apt_pkgs:
+      - alacritty
       - curl
       - fish
-      - alacritty
-      - tmux
+      - go-dep
       - tig
+      - tmux
       - vagrant
       # Docker dependencies:
       - apt-transport-https
       - ca-certificates
-      - gnupg-agent
-      - software-properties-common
+      - containerd.io
       - docker-ce
       - docker-ce-cli
-      - containerd.io
+      - gnupg-agent
+      - software-properties-common
       # Laptop packages:
       - pm-utils
 

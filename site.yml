@@ -10,6 +10,7 @@
       - go
       - goland
       - hugo
+      - jq
       - pycharm-professional
       - postman
       - terraform

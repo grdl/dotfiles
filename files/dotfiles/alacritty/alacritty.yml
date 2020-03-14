@@ -2,8 +2,7 @@ font:
   normal:
     family: monospace
     style: Regular
-  size: 8
-
+  size: 12
 window:
   startup_mode: Maximized
 

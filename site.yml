@@ -124,13 +124,6 @@
         dest: "~/workspace/tools/{{ item.repo | basename }}"
       loop: "{{ git_repos }}"
 
-    - name: Ensure dotfiles dest dirs exists
-      file:
-        path: "{{ item.dest | dirname }}"
-        state: directory
-      loop: "{{ symlinks }}"
-      tags: dotfiles
-
     - name: Create symlinks
       include_tasks: symlink.yml
       loop: "{{ symlinks }}"

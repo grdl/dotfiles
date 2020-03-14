@@ -5,6 +5,24 @@
   register: src_path
   tags: dotfiles
 
+# When dest is a file ensure parent directories exists
+- name: Ensure destination directory
+  file:
+    path: "{{ item.dest | dirname }}"
+    recurse: yes
+    state: directory
+  when: src_path.stat.isdir is not defined or not src_path.stat.isdir
+  tags: dotfiles
+
+# When dest is a directory ensure it and its parents
+- name: Ensure destination directory
+  file:
+    path: "{{ item.dest }}"
+    recurse: yes
+    state: directory
+  when: src_path.stat.isdir is defined and src_path.stat.isdir
+  tags: dotfiles
+
 - name: Symlink a single "{{ item.src | basename }}" file
   file:
     src: "{{ item.src }}"

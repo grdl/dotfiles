@@ -24,6 +24,7 @@
       - curl
       - fish
       - go-dep
+      - htop
       - tig
       - tmux
       - vagrant

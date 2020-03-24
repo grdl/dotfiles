@@ -63,6 +63,7 @@
       - { src: "{{ playbook_dir }}/files/dotfiles/fish/completions", dest: ~/.config/fish/completions }
       - { src: "{{ playbook_dir }}/files/dotfiles/fish/functions", dest: ~/.config/fish/functions }
       - { src: "{{ playbook_dir }}/files/dotfiles/vscode", dest: ~/.config/Code/User }
+      - { src: "{{ playbook_dir }}/files/dotfiles/vim/vimrc", dest: ~/.vimrc }
       - { src: ~/workspace/tools/kubectx/kubectx, dest: ~/.local/bin/kubectx }
       - { src: ~/workspace/tools/kubectx/kubens, dest: ~/.local/bin/kubens }
       - { src: ~/workspace/tools/kubetail/kubetail, dest: ~/.local/bin/kubetail }

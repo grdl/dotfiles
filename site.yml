@@ -6,8 +6,10 @@
   vars:
     snap_pkgs:
       - code
+      - fluxctl
       - go
       - goland
+      - helm
       - hugo
       - jq
       - kubectl
@@ -28,6 +30,7 @@
       - tig
       - tmux
       - vagrant
+      - vim
       # Docker dependencies:
       - apt-transport-https
       - ca-certificates

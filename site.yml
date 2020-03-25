@@ -1,4 +1,4 @@
----
+
 - hosts: localhost
   connection: local
   gather_facts: no
@@ -71,6 +71,14 @@
       - { src: ~/workspace/tools/multi-git-status/mgitstatus, dest: ~/.local/bin/mgitstatus }
 
   tasks:
+    - name: Ensure sysctl configuration
+      become: yes
+      sysctl:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+      loop:
+        - { name: fs.inotify.max_user_watches, value: 524288 } # https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
+
     - name: Ensure workspace directory
       file:
         path: "{{ item }}"
@@ -93,6 +101,8 @@
         url: https://download.docker.com/linux/ubuntu/gpg
         id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
         state: present
+      loop:
+
 
     - name: Add apt repos
       become: yes

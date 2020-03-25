@@ -12,7 +12,7 @@ alias kc "kubectl"
 alias kx "kubectx"
 alias kn "kubens"
 alias kt "kubetail"
-alias mgs "mgitstatus ~/workspace 3"
+alias mgs "mgitstatus --depth 3 ~/workspace"
 
 # Pyenv support
 # status --is-interactive; and pyenv init - | source

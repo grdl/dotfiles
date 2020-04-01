@@ -15,7 +15,6 @@
       - kubectl
       - postman
       - pycharm-professional
-      - terraform
 
     apt_repos:
       - ppa:mmstick76/alacritty
@@ -45,6 +44,9 @@
     deb_pkgs:
       - https://storage.googleapis.com/minikube/releases/latest/minikube_1.6.2.deb
       - https://download.virtualbox.org/virtualbox/6.1.0/virtualbox-6.1_6.1.0-135406~Ubuntu~bionic_amd64.deb
+
+    raw_pkgs:
+      - https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
 
     git_repos:
       - { repo: "https://github.com/ahmetb/kubectx", version: v0.7.1 }
@@ -103,7 +105,6 @@
         state: present
       loop:
 
-
     - name: Add apt repos
       become: yes
       apt_repository:
@@ -132,6 +133,14 @@
         name: "{{ lookup('env', 'USER') }}"
         groups: "docker"
         append: "yes"
+
+    - name: Download raw binaries
+      unarchive:
+        src: "{{ item }}"
+        dest: "~/.local/bin/"
+        remote_src: yes
+        mode: "a+x"
+      loop: "{{ raw_pkgs }}"
 
     - name: Clone git repos
       git:

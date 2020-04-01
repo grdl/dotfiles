@@ -4,6 +4,9 @@
 # set -gx PATH ~/.pyenv/bin $PATH
 # set -gx PATH ~/bin $PATH
 
+# set flux namespace
+set -gx FLUX_FORWARD_NAMESPACE flux
+
 #Disable fish greeting
 set fish_greeting
 

@@ -45,8 +45,10 @@
       - https://storage.googleapis.com/minikube/releases/latest/minikube_1.6.2.deb
       - https://download.virtualbox.org/virtualbox/6.1.0/virtualbox-6.1_6.1.0-135406~Ubuntu~bionic_amd64.deb
 
-    raw_pkgs:
-      - https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
+    # If scr is an archive it will be unpacked to dest directory
+    downloads: 
+      - { src: "https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip", dest: ~/.local/bin/ }
+      - { src: "https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.12.1/kubeseal-linux-amd64", dest: ~/.local/bin/kubeseal }
 
     git_repos:
       - { repo: "https://github.com/ahmetb/kubectx", version: v0.7.1 }
@@ -81,7 +83,7 @@
       loop:
         - { name: fs.inotify.max_user_watches, value: 524288 } # https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
 
-    - name: Ensure workspace directory
+    - name: Ensure directories
       file:
         path: "{{ item }}"
         state: directory
@@ -134,13 +136,24 @@
         groups: "docker"
         append: "yes"
 
-    - name: Download raw binaries
+    - name: Download and unarchive binaries
       unarchive:
-        src: "{{ item }}"
-        dest: "~/.local/bin/"
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}" 
+        mode: "0755"
         remote_src: yes
-        mode: "a+x"
-      loop: "{{ raw_pkgs }}"
+      loop: "{{ downloads }}"
+      when: item.src is match(".*(\.tar\.gz|\.tar|\.zip)$")
+      tags: test
+
+    - name: Download raw binaries
+      get_url:
+        url: "{{ item.src }}"
+        dest: "{{ item.dest }}" 
+        mode: "0755"
+      loop: "{{ downloads }}"
+      when: item.src is not match(".*(\.tar\.gz|\.tar|\.zip)$")
+      tags: test
 
     - name: Clone git repos
       git:

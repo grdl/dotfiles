@@ -2,7 +2,9 @@
 # set -gx PATH /snap/bin/ $PATH
 # set -gx PATH ~/.npm-global/bin $PATH
 # set -gx PATH ~/.pyenv/bin $PATH
-# set -gx PATH ~/bin $PATH
+
+# we put downloaded binaries to ~/.local/bin, make sure it's added to $PATH
+set -gx PATH ~/.local/bin $PATH
 
 # set flux namespace
 set -gx FLUX_FORWARD_NAMESPACE flux

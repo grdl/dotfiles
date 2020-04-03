@@ -3,8 +3,10 @@ font:
     family: monospace
     style: Regular
   size: 11
-window:
-  startup_mode: Maximized
+
+# "startup_mode: Maximized" doesn't work on a box with nvidia drivers :/
+# window:
+#   startup_mode: Maximized
 
 shell:
   program: /usr/bin/fish

@@ -1,11 +1,10 @@
-" General
+" General 
 
-set linebreak			" Break lines at word (requires Wrap lines)
-set showbreak=+++		" Wrap-broken line prefix
-set textwidth=100		" Line wrap (number of cols)
-set showmatch			" Highlight matching brace
-set visualbell			" Use visual bell (no beeping)
- 
+set linebreak			" Break lines at word (requires Wrap lines) 
+set showbreak=+++		" Wrap-broken line prefix 
+set textwidth=100		" Line wrap (number of cols) 
+set showmatch			" Highlight matching brace 
+set visualbell			" Use visual bell (no beeping) 
 set hlsearch			" Highlight all search results
 set smartcase			" Enable smart-case search
 set ignorecase			" Always case-insensitive
@@ -54,6 +53,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 call plug#end()
 
 
@@ -70,6 +71,12 @@ map <C-p> :Files<CR>
 set laststatus=2
 set noshowmode
 if !has('gui_running')
-      set t_Co=256
+    set t_Co=256
 endif
+
+" Dracula theme configuration
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0        " Alacritty doesn't support italics so we need to disable them
+syntax on
+colorscheme dracula
 

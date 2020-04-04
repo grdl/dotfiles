@@ -67,6 +67,7 @@
       - { src: "{{ playbook_dir }}/files/dotfiles/fish", dest: ~/.config/fish }
       - { src: "{{ playbook_dir }}/files/dotfiles/fish/completions", dest: ~/.config/fish/completions }
       - { src: "{{ playbook_dir }}/files/dotfiles/fish/functions", dest: ~/.config/fish/functions }
+      - { src: "{{ playbook_dir }}/files/dotfiles/starship/starship.toml", dest: ~/.config/starship.toml }
       - { src: "{{ playbook_dir }}/files/dotfiles/vscode", dest: ~/.config/Code/User }
       - { src: "{{ playbook_dir }}/files/dotfiles/vim/vimrc", dest: ~/.vimrc }
       - { src: "{{ playbook_dir }}/files/dotfiles/vim/ideavimrc", dest: ~/.ideavimrc }
@@ -174,13 +175,3 @@
       changed_when: false
       tags: dotfiles
 
-    # TODO: find a way to make it idempotent
-    # HACK! Running "fisher" will overwrite the fish_prompt to the default one used by the "pure" package
-    # We need to overwrite it back to "our" promt so that kubectl context is included
-    - name: Overwrite fish_prompt
-      file:
-        src: "{{ playbook_dir }}/files/dotfiles/fish/functions/fish_prompt.fish"
-        dest: ~/.config/fish/functions/fish_prompt.fish
-        state: link
-        force: yes
-      tags: dotfiles

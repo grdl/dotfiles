@@ -15,6 +15,7 @@
       - kubectl
       - postman
       - pycharm-professional
+      - starship
 
     apt_repos:
       - ppa:mmstick76/alacritty

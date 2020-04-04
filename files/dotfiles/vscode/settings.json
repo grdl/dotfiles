@@ -39,7 +39,7 @@
     "statusBar.background": "#353535",
     "statusBar.foreground": "#dddddd"
   },
-  "workbench.colorTheme": "Monokai Dimmed",
+  "workbench.colorTheme": "Dracula",
   "workbench.startupEditor": "newUntitledFile",
   "yaml.format.printWidth": 160,
 }

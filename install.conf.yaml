@@ -1,0 +1,64 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ["~"]
+
+- create:
+    - ~/workspace
+    - ~/workspace/tools
+    - ~/.local/bin
+
+# Symlink dotfiles
+- link:
+    ~/.config/alacritty/alacritty.yml:
+      path: dotfiles/alacritty/alacritty.yml
+
+    ~/.gitconfig:
+      path: dotfiles/git/gitconfig
+
+    ~/.gitignore_global:
+      path: dotfiles/git/gitignore_global
+
+    ~/.config/fish/config.fish:
+      path: dotfiles/fish/config.fish
+
+    ~/.config/fish/functions/:
+      path: dotfiles/fish/functions/*
+      glob: true
+
+    ~/.config/fish/completions/:
+      path: dotfiles/fish/completions/*
+      glob: true
+
+    ~/.config/fish/conf.d/:
+      path: dotfiles/fish/conf.d/*
+      glob: true
+
+    ~/.config/starship.toml:
+      path: dotfiles/starship/starship.toml
+
+    ~/.tmux.conf:
+      path: dotfiles/tmux/tmux.conf
+
+    ~/.vimrc:
+      path: dotfiles/vim/vimrc
+    
+    ~/.ideavimrc:
+      path: dotfiles/vim/ideavimrc
+
+    ~/.config/Code/User/:
+      path: dotfiles/vscode/*
+      glob: true
+
+# Symlink tools (need to be cloned with install-packages script)
+- link:
+    ~/.local/bin/kubectx:
+      path: ~/workspace/tools/kubectx/kubectx
+    ~/.local/bin/kubens:
+      path: ~/workspace/tools/kubectx/kubens
+    ~/.local/bin/kubetail:
+      path: ~/workspace/tools/kubetail/kubetail
+    ~/.local/bin/mgitstatus:
+      path: ~/workspace/tools/multi-git-status/mgitstatus

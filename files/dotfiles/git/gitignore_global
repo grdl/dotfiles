@@ -17,5 +17,6 @@ target/
 charts/
 
 # Vim .swp files
-.swp
+*.swp
+
 __pycache__/

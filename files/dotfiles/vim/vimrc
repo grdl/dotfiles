@@ -39,11 +39,13 @@ call plug#begin('~/.vim/vim-plug-plugins')
 
 Plug 'tpope/vim-surround'
 
+Plug 'tpope/sensible'
+
+Plug 'tpope/vim-commentary'
+
 Plug 'preservim/nerdtree'
 
 Plug 'airblade/vim-gitgutter'
-
-Plug 'preservim/nerdcommenter'
 
 Plug 'fatih/vim-go'
 

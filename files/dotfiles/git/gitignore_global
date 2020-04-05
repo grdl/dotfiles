@@ -10,7 +10,12 @@ target/
 .idea/
 .vscode/
 
+# Ansible retry files
 *.retry
+
+# Helm downloaded dependencies
 charts/
 
+# Vim .swp files
+.swp
 __pycache__/

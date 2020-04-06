@@ -1,0 +1,63 @@
+#!/bin/bash
+
+set -e
+
+
+# Add apt repositories and update apt
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "ppa:mmstick76/alacritty" --no-update --yes
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" --no-update --yes
+
+sudo apt update
+
+
+# Install apt packages
+# Necessary for Alacritty, Docker and Homebrew 
+
+sudo apt install --yes \
+    alacritty \
+    apt-transport-https \
+    build-essential \
+    ca-certificates \
+    containerd.io \
+    curl \
+    docker-ce \
+    docker-ce-cli \
+    file \
+    git \
+    gnupg-agent \
+    pm-utils \
+    software-properties-common
+
+
+# Add user to docker group
+
+sudo groupadd docker -f
+sudo usermod -aG docker $USER
+
+
+# Install snap packages 
+# Has to be in separate lines as classic snaps can't be installed in a single command.
+                
+sudo snap install code --classic
+sudo snap install goland --classic
+sudo snap install pycharm-professional --classic
+sudo snap install postman 
+
+
+# Install Homebrew and add it to PATH
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" | sudo tee -a /etc/profile.d/homebrew.sh
+
+
+# Install Homebrew packages from Brewfile
+
+brew bundle --file dotfiles/brew/Brewfile
+
+
+# TODO: do we want to change a default shell or is setting in Alacritty config enough? 
+# echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
+# sudo chsh -s /home/linuxbrew/.linuxbrew/bin/fish $USER

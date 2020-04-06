@@ -3,12 +3,14 @@
       relink: true
       create: true
 
+
 - clean: ["~"]
+
 
 - create:
     - ~/workspace
-    - ~/workspace/tools
     - ~/.local/bin
+
 
 # Symlink dotfiles
 - link:
@@ -23,6 +25,9 @@
 
     ~/.config/fish/config.fish:
       path: dotfiles/fish/config.fish
+      
+    ~/.config/fish/fishfile:
+      path: dotfiles/fish/fishfile
 
     ~/.config/fish/functions/:
       path: dotfiles/fish/functions/*
@@ -52,13 +57,15 @@
       path: dotfiles/vscode/*
       glob: true
 
-# Symlink tools (need to be cloned with install-packages script)
+
+# Install fisher plugins from fishfile
+- shell:
+  - fish -c fisher
+    
+
+# Symlink tools (need to be cloned first) 
 - link:
-    ~/.local/bin/kubectx:
-      path: ~/workspace/tools/kubectx/kubectx
-    ~/.local/bin/kubens:
-      path: ~/workspace/tools/kubectx/kubens
-    ~/.local/bin/kubetail:
-      path: ~/workspace/tools/kubetail/kubetail
     ~/.local/bin/mgitstatus:
-      path: ~/workspace/tools/multi-git-status/mgitstatus
+      path: ~/workspace/github.com/fboender/multi-git-status/mgitstatus
+      ignore-missing: true
+

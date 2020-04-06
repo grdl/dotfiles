@@ -42,3 +42,6 @@ prompt_order = [
 symbol = "⛵ "
 style = "dimmed 240"
 disabled = false
+
+[git_branch]
+symbol = "🌱 "

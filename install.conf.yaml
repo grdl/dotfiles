@@ -69,3 +69,6 @@
       path: ~/workspace/github.com/fboender/multi-git-status/mgitstatus
       ignore-missing: true
 
+    ~/.local/bin/kubetail:
+      path: ~/workspace/github.com/johanhaleby/kubetail/kubetail
+      ignore-missing: true

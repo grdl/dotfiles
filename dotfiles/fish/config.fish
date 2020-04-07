@@ -25,7 +25,7 @@ alias kc "kubectl"
 alias kx "kubectx"
 alias kn "kubens"
 alias kt "kubetail"
-alias mgs "mgitstatus --depth 3 ~/workspace"
+alias mgs "mgitstatus --depth 5 ~/workspace"
 
 
 # Enable starship prompt

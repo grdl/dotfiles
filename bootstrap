@@ -3,6 +3,11 @@
 set -e
 
 
+# Install curl, some distributions don't have it installed upfront
+
+sudo apt install curl --yes
+
+
 # Add apt repositories and update apt
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -50,7 +55,7 @@ sudo snap install postman
 # Install Homebrew and add it to PATH
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-# echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" | sudo tee -a /etc/profile.d/homebrew.sh
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 
 # Install Homebrew packages from Brewfile

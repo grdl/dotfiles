@@ -52,17 +52,18 @@ sudo snap install pycharm-professional --classic
 sudo snap install postman 
 
 
-# Install Homebrew and add it to PATH
+# Install Homebrew 
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+
+# Add Homebrew to PATH so that packages can be installed below
+# We're setting SHELL to "bash" temporarily because this script is execeuted with #!/bin/bash
+# Otherwise bootstrap wouldn't work if executed from fish shell
+eval $(SHELL=/bin/bash /home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 
 # Install Homebrew packages from Brewfile
 
 brew bundle --file dotfiles/brew/Brewfile
 
-
-# TODO: do we want to change a default shell or is setting in Alacritty config enough? 
-# echo "/home/linuxbrew/.linuxbrew/bin/fish" | sudo tee -a /etc/shells
-# sudo chsh -s /home/linuxbrew/.linuxbrew/bin/fish $USER

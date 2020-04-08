@@ -2,6 +2,7 @@
 
 Manage your dotfiles and bootstrap your workstation
 
+Both `bootstrap` and `install` scripts are idempotent - it's safe to run them multiple times.
 
 ## Bootstrap
 

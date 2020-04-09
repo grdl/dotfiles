@@ -53,10 +53,15 @@ Plug 'terryma/vim-multiple-cursors'
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'valloric/youcompleteme'
+
+Plug 'majutsushi/tagbar'
+
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -68,6 +73,9 @@ map <C-t> :NERDTreeToggle<CR>
 
 " Open fzf fuzzy search
 map <C-p> :Files<CR>
+
+" Toggle Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 
 " lightline configuration

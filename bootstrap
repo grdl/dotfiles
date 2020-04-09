@@ -19,7 +19,7 @@ sudo apt update
 
 
 # Install apt packages
-# Necessary for Alacritty, Docker and Homebrew 
+# Necessary for Alacritty, Docker, Homebrew and some of the Vim plugins
 
 sudo apt install --yes \
     alacritty \
@@ -27,14 +27,17 @@ sudo apt install --yes \
     apt-transport-https \
     build-essential \
     ca-certificates \
+    cmake \
     containerd.io \
     curl \
     docker-ce \
     docker-ce-cli \
+    exuberant-ctags \
     file \
     git \
     gnupg-agent \
     pm-utils \
+    python3-dev \
     software-properties-common
 
 

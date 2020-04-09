@@ -61,6 +61,9 @@
 # Install fisher plugins from fishfile
 - shell:
   - fish -c fisher
+
+- shell:
+  - cat dotfiles/vscode/vscode.extensions | xargs -L 1 code --install-extension
     
 
 # Symlink tools (need to be cloned first) 

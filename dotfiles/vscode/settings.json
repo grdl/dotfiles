@@ -1,14 +1,13 @@
 {
   "cSpell.userWords": [
-    "gridarrow"
+    "gridarrow",
+    "kubernetes"
   ],
-  "editor.minimap.enabled": true,
   "editor.formatOnSave": true,
   "editor.smoothScrolling": true,
-  "editor.suggestSelection": "first",
   "editor.detectIndentation": false,
   "editor.tabSize": 2,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "selection",
   "editor.fontSize": 13,
   "editor.fontFamily": "monospace",
   "explorer.confirmDragAndDrop": false,
@@ -19,27 +18,19 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "files.associations": {
-    "Vagrantfile": "ruby",
-    "*.tfstate": "json"
-  },
   "git.confirmSync": false,
   "git.autofetch": true,
   "go.gopath": "~/go",
   "go.useLanguageServer": true,
-  "sync.gist": "4ec9696e8b13a90eee3860cfd07aba75",
-  "sync.quietSync": true,
-  "sync.autoUpload": true,
   "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.integrated.shell.linux": "fish",
   "terminal.integrated.fontFamily": "monospace",
-  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontSize": 14,
   "window.newWindowDimensions": "maximized",
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#353535",
-    "statusBar.foreground": "#dddddd"
-  },
   "workbench.colorTheme": "Dracula",
   "workbench.startupEditor": "newUntitledFile",
-  "yaml.format.printWidth": 160,
+  "yaml.schemaStore.enable": true,
+  "yaml.schemas": {
+    "Kubernetes": "*.yaml"
+  }
 }

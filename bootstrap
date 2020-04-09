@@ -23,6 +23,7 @@ sudo apt update
 
 sudo apt install --yes \
     alacritty \
+    apache2-utils \
     apt-transport-https \
     build-essential \
     ca-certificates \

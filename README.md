@@ -1,6 +1,6 @@
 # Dotfiles
 
-Manage your dotfiles and bootstrap your workstation
+Manage your dotfiles and bootstrap your workstation with [Dotbot](https://github.com/cnishathalye/dotbot) and a simple shell script.
 
 Both `bootstrap` and `install` scripts are idempotent - it's safe to run them multiple times.
 
@@ -21,4 +21,6 @@ necessary to add apt repos and install packages.
 ## Dotfiles
 
 Run `./install` to symlink dotfiles using [Dotbot](https://github.com/cnishathalye/dotbot).
+
+Symlinks are configured in [install.conf.yaml](install.conf.yaml) file.
 

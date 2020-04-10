@@ -32,5 +32,6 @@
   "yaml.schemaStore.enable": true,
   "yaml.schemas": {
     "Kubernetes": "*.yaml"
-  }
+  },
+  "python.venvPath": "~/.cache/pypoetry/virtualenvs"
 }

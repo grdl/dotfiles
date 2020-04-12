@@ -23,7 +23,7 @@
   "go.gopath": "~/go",
   "go.useLanguageServer": true,
   "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.shell.linux": "fish",
+  "terminal.integrated.shell.linux": "/home/linuxbrew/.linuxbrew/bin/fish",
   "terminal.integrated.fontFamily": "monospace",
   "terminal.integrated.fontSize": 14,
   "window.newWindowDimensions": "maximized",

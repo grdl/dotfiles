@@ -1,37 +1,48 @@
 {
-  "cSpell.userWords": [
-    "gridarrow",
-    "kubernetes"
-  ],
-  "editor.formatOnSave": true,
-  "editor.smoothScrolling": true,
-  "editor.detectIndentation": false,
-  "editor.tabSize": 2,
-  "editor.renderWhitespace": "selection",
-  "editor.fontSize": 13,
-  "editor.fontFamily": "monospace",
-  "explorer.confirmDragAndDrop": false,
-  "files.autoSave": "onFocusChange",
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  "git.confirmSync": false,
-  "git.autofetch": true,
-  "go.gopath": "~/go",
-  "go.useLanguageServer": true,
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.shell.linux": "fish",
-  "terminal.integrated.fontFamily": "monospace",
-  "terminal.integrated.fontSize": 14,
-  "window.newWindowDimensions": "maximized",
-  "workbench.colorTheme": "Dracula",
-  "workbench.startupEditor": "newUntitledFile",
-  "yaml.schemaStore.enable": true,
-  "yaml.schemas": {
-    "Kubernetes": "*.yaml"
-  },
-  "python.venvPath": "~/.cache/pypoetry/virtualenvs"
+    "cSpell.userWords": [
+        "gridarrow",
+        "kubernetes",
+        "pylint",
+        "repos"
+    ],
+    "editor.formatOnSave": true,
+    "editor.smoothScrolling": true,
+    "editor.renderWhitespace": "selection",
+    "editor.fontSize": 13,
+    "editor.fontFamily": "monospace",
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.pytest_cache": true,
+        "**/.settings": true,
+        "**/*.swp": true
+    },
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "go.gopath": "~/go",
+    "go.useLanguageServer": true,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.shell.linux": "fish",
+    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontSize": 14,
+    "window.newWindowDimensions": "maximized",
+    "workbench.colorTheme": "Dracula",
+    "workbench.startupEditor": "newUntitledFile",
+    "yaml.schemaStore.enable": true,
+    "yaml.schemas": {
+        "Kubernetes": "*.yaml"
+    },
+    "python.venvPath": "~/.cache/pypoetry/virtualenvs",
+    "python.formatting.autopep8Args": [
+        "--max-line-length=120"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true,
 }

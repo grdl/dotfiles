@@ -24,3 +24,13 @@ Run `./install` to symlink dotfiles using [Dotbot](https://github.com/cnishathal
 
 Symlinks are configured in [install.conf.yaml](install.conf.yaml) file.
 
+
+## Manual stuff
+
+To dump currently installed vscode extensions into a file, run:
+
+    code --list-extensions > dotfiles/vscode/vscode.extensions
+
+To dump currently installed Homebrew packages into a file, run:
+
+    brew bundle dump --file dotfiles/brew/Brewfile --force

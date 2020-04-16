@@ -45,4 +45,7 @@
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
     "python.testing.pytestEnabled": true,
+    "cSpell.allowCompoundWords": true,
+    "cSpell.language": "en,en-GB",
+    "python.jediEnabled": false,
 }

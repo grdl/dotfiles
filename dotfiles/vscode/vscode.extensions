@@ -2,6 +2,7 @@ bungcip.better-toml
 christian-kohler.path-intellisense
 dracula-theme.theme-dracula
 eamodio.gitlens
+ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
 ms-vscode.Go
 redhat.vscode-yaml

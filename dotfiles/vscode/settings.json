@@ -32,10 +32,6 @@
     "window.newWindowDimensions": "maximized",
     "workbench.colorTheme": "Dracula",
     "workbench.startupEditor": "newUntitledFile",
-    "yaml.schemaStore.enable": true,
-    "yaml.schemas": {
-        "Kubernetes": "*.yaml"
-    },
     "python.venvPath": "~/.cache/pypoetry/virtualenvs",
     "python.formatting.autopep8Args": [
         "--max-line-length=120"
@@ -48,4 +44,5 @@
     "cSpell.allowCompoundWords": true,
     "cSpell.language": "en,en-GB",
     "python.jediEnabled": false,
+    "extensions.ignoreRecommendations": false,
 }

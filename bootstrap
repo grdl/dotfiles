@@ -47,15 +47,6 @@ sudo groupadd docker -f
 sudo usermod -aG docker $USER
 
 
-# Install snap packages 
-# Has to be in separate lines as classic snaps can't be installed in a single command.
-                
-sudo snap install code --classic
-sudo snap install goland --classic
-sudo snap install pycharm-professional --classic
-sudo snap install postman 
-
-
 # Install Homebrew 
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -71,3 +62,15 @@ eval $(SHELL=/bin/bash /home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 brew bundle --file dotfiles/brew/Brewfile
 
+
+# Install Go
+
+wget -qO- https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz | sudo tar xzf - -C /usr/local
+
+
+# Install VSCode
+
+TEMP_DEB="$(mktemp)" &&
+wget -O "$TEMP_DEB" 'https://go.microsoft.com/fwlink/?LinkID=760868' &&
+sudo dpkg --skip-same-version -i "$TEMP_DEB"
+rm -f "$TEMP_DEB"

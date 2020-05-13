@@ -6,13 +6,13 @@ Both `bootstrap` and `install` scripts are idempotent - it's safe to run them mu
 
 ## Bootstrap
 
-Run `./bootstrap` to install necessary packages. It's written for Ubuntu 18.04.
+Run `./bootstrap` to install necessary packages. It's tested with Ubuntu 18.04 and 20.04.
 
 Specifically the script will:
 - Add apt repos for Alacritty and Docker.
 - Install Docker and its dependencies, add your used to `docker` group.
 - Install Homebrew and packages listed in the `Brewfile`.
-- Install GUI applications with snap.
+- Install additional packages which are not in Apt or Brewfile (like Go or VSCode)
 
 Don't run the script with `sudo`. However, when started you will be asked for your password. This is
 necessary to add apt repos and install packages. 

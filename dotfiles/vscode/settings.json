@@ -44,5 +44,5 @@
     "cSpell.allowCompoundWords": true,
     "cSpell.language": "en,en-GB",
     "python.jediEnabled": false,
-    "extensions.ignoreRecommendations": false,
+    "extensions.ignoreRecommendations": true
 }

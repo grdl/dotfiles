@@ -74,3 +74,8 @@ TEMP_DEB="$(mktemp)" &&
 wget -O "$TEMP_DEB" 'https://go.microsoft.com/fwlink/?LinkID=760868' &&
 sudo dpkg --skip-same-version -i "$TEMP_DEB"
 rm -f "$TEMP_DEB"
+
+
+# Install Jetbrains Toolbox
+
+wget -qO- https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.17.6856.tar.gz | tar xzf - -C ~/.local/bin --strip 1

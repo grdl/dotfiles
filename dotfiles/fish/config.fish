@@ -1,8 +1,9 @@
 # we put downloaded binaries to ~/.local/bin, make sure it's added to $PATH
 set fish_user_paths $PATH ~/.local/bin 
 
-# Add Go to PATH
+# Add Go executable and GOPATH to PATH
 set fish_user_paths $PATH /usr/local/go/bin
+set fish_user_paths $PATH ~/go/bin
 
 # Add Homebrew to PATH
 set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";

@@ -6,5 +6,26 @@
     {
         "key": "alt+right",
         "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "alt+v",
+        "command": "toggleVim"
+    },
+    {
+        "key": "escape escape",
+        "command": "-workbench.action.exitZenMode",
+        "when": "inZenMode"
+    },
+    {
+        "key": "alt+z",
+        "command": "-editor.action.toggleWordWrap"
+    },
+    {
+        "key": "alt+z",
+        "command": "workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+k z",
+        "command": "-workbench.action.toggleZenMode"
     }
 ]

@@ -1,4 +1,5 @@
-chema": "https://aka.ms/terminal-profiles-schema",
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
     "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
     // You can add more global application settings here.
     // To learn more about global settings, visit https://aka.ms/terminal-global-settings
@@ -42,6 +43,12 @@ chema": "https://aka.ms/terminal-profiles-schema",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },

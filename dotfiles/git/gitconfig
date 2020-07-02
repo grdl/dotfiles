@@ -16,13 +16,8 @@
 	default = matching
 [core]
 	autocrlf = input
-	# Can't use ~ or $HOME here because git-get can't expand shell variables
-		excludesfile = /home/grdl/.gitignore_global
+		excludesfile = ~/.gitignore_global
         editor = vim
 
-# Set root dir for ghq manager
-[ghq]
-        root = ~/workspace
-
 [gitget]
-        reposRoot = /home/grdl/repositories
+        root = ~/repositories

@@ -12,17 +12,15 @@ sudo apt install curl --yes
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-sudo add-apt-repository "ppa:mmstick76/alacritty" --no-update --yes
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" --no-update --yes
 
 sudo apt update
 
 
 # Install apt packages
-# Necessary for Alacritty, Docker, Homebrew and some of the Vim plugins
+# Necessary for Docker, Homebrew and some of the Vim plugins
 
 sudo apt install --yes \
-    alacritty \
     apache2-utils \
     apt-transport-https \
     build-essential \
@@ -70,12 +68,7 @@ wget -qO- https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz | sudo tar xzf - 
 
 # Install VSCode
 
-TEMP_DEB="$(mktemp)" &&
-wget -O "$TEMP_DEB" 'https://go.microsoft.com/fwlink/?LinkID=760868' &&
-sudo dpkg --skip-same-version -i "$TEMP_DEB"
-rm -f "$TEMP_DEB"
-
-
-# Install Jetbrains Toolbox
-
-wget -qO- https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.17.6856.tar.gz | tar xzf - -C ~/.local/bin --strip 1
+#TEMP_DEB="$(mktemp)" &&
+#wget -O "$TEMP_DEB" 'https://go.microsoft.com/fwlink/?LinkID=760868' &&
+#sudo dpkg --skip-same-version -i "$TEMP_DEB"
+#rm -f "$TEMP_DEB"

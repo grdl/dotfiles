@@ -4,6 +4,7 @@ set fish_user_paths $PATH ~/.local/bin
 # Add Go executable and GOPATH to PATH
 set fish_user_paths $PATH /usr/local/go/bin
 set fish_user_paths $PATH ~/go/bin
+set fish_user_paths $PATH ~/.npm-global/bin
 
 # Add Homebrew to PATH
 set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";

@@ -21,3 +21,5 @@
 
 [gitget]
         root = ~/repositories
+[diff "sopsdiffer"]
+	textconv = sops -d

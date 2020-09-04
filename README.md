@@ -34,3 +34,6 @@ To dump currently installed vscode extensions into a file, run:
 To dump currently installed Homebrew packages into a file, run:
 
     brew bundle dump --file dotfiles/brew/Brewfile --force
+
+To dump your repositories using git-get, run:
+    git list -o dump > dotfiles/git/repos_dump

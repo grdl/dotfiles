@@ -1,1 +1,5 @@
 https://github.com/johanhaleby/kubetail master
+ssh://git@github.com/grdl/cloud.grdl.dev.git master
+ssh://git@github.com/grdl/home.grdl.dev.git master
+ssh://git@github.com/grdl/sandbox master
+ssh://git@github.com/grdl/git-get master

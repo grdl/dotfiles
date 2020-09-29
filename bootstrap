@@ -3,57 +3,9 @@
 set -e
 
 
-# Install curl, some distributions don't have it installed upfront
-
-sudo apt install curl --yes
-
-
-# Add apt repositories and update apt
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" --no-update --yes
-
-sudo apt update
-
-
-# Install apt packages
-# Necessary for Docker, Homebrew and some of the Vim plugins
-
-sudo apt install --yes \
-    apache2-utils \
-    apt-transport-https \
-    build-essential \
-    ca-certificates \
-    cmake \
-    containerd.io \
-    curl \
-    docker-ce \
-    docker-ce-cli \
-    exuberant-ctags \
-    file \
-    git \
-    gnupg-agent \
-    pm-utils \
-    python3-dev \
-    software-properties-common
-
-
-# Add user to docker group
-
-sudo groupadd docker -f
-sudo usermod -aG docker $USER
-
-
 # Install Homebrew 
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-
-# Add Homebrew to PATH so that packages can be installed below
-# We're setting SHELL to "bash" temporarily because this script is execeuted with #!/bin/bash
-# Otherwise bootstrap wouldn't work if executed from fish shell
-eval $(SHELL=/bin/bash /home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 
 # Install Homebrew packages from Brewfile
@@ -63,12 +15,4 @@ brew bundle --file dotfiles/brew/Brewfile
 
 # Install Go
 
-wget -qO- https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz | sudo tar xzf - -C /usr/local
-
-
-# Install VSCode
-
-#TEMP_DEB="$(mktemp)" &&
-#wget -O "$TEMP_DEB" 'https://go.microsoft.com/fwlink/?LinkID=760868' &&
-#sudo dpkg --skip-same-version -i "$TEMP_DEB"
-#rm -f "$TEMP_DEB"
+wget -qO- https://dl.google.com/go/go1.15.2.darwin-amd64.tar.gz | sudo tar xzf - -C /usr/local

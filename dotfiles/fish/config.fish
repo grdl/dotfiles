@@ -23,8 +23,8 @@ set -gx FLUX_FORWARD_NAMESPACE flux
 set fish_greeting
 
 # Set aliases
-alias lll "ls -la --group-directories-first"
-alias ll "ls -l --group-directories-first"
+alias lll "ls -la"
+alias ll "ls -l"
 alias kc "kubectl"
 alias kx "kubectx"
 alias kn "kubens"

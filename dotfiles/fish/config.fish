@@ -1,18 +1,15 @@
 # we put downloaded binaries to ~/.local/bin, make sure it's added to $PATH
-set fish_user_paths $PATH ~/.local/bin 
+set fish_user_paths $PATH ~/.local/bin
 
 # Add Go executable and GOPATH to PATH
 set fish_user_paths $PATH /usr/local/go/bin
 set fish_user_paths $PATH ~/go/bin
 set fish_user_paths $PATH ~/.npm-global/bin
 
-# Add Homebrew to PATH
-set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";
-set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar";
-set -gx HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew";
-set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin" $fish_user_paths;
-set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/home/linuxbrew/.linuxbrew/share/man" $MANPATH;
-set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH;
+# Set up Pyenv
+set PYENV_ROOT $HOME/.pyenv
+set fish_user_paths $PATH $PYENV_ROOT/bin
+pyenv init - | source
 
 
 # set flux namespace
@@ -29,10 +26,7 @@ alias kc "kubectl"
 alias kx "kubectx"
 alias kn "kubens"
 alias kt "kubetail"
-alias mgs "mgitstatus --depth 5 ~/repositories"
-alias mgsf "mgitstatus -f --depth 5 ~/repositories"
 
 
 # Enable starship prompt
 starship init fish | source
-

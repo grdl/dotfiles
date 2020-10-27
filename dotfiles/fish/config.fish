@@ -1,19 +1,19 @@
 # we put downloaded binaries to ~/.local/bin, make sure it's added to $PATH
-set fish_user_paths $PATH ~/.local/bin
+set PATH ~/.local/bin $PATH
 
-# Add Go executable and GOPATH to PATH
-set fish_user_paths $PATH /usr/local/go/bin
-set fish_user_paths $PATH ~/go/bin
-set fish_user_paths $PATH ~/.npm-global/bin
+# # Add Go executable and GOPATH to PATH
+set PATH /usr/local/go/bin $PATH
+set PATH ~/go/bin $PATH
 
 # Set up Pyenv
-set PYENV_ROOT $HOME/.pyenv
-set fish_user_paths $PATH $PYENV_ROOT/bin
+set -x PYENV_ROOT $HOME/.pyenv
+set PATH $PYENV_ROOT/bin $PATH
 pyenv init - | source
 
 
-# set flux namespace
-set -gx FLUX_FORWARD_NAMESPACE flux
+# Use yubikey as MFA for aws-vault
+#set -gx AWS_VAULT_KEYCHAIN_NAME login
+set -gx AWS_VAULT_PROMPT ykman
 
 
 # Disable fish greeting

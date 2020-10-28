@@ -1,0 +1,7 @@
+[user]  
+    name = Greg Dlugoszewski
+    email = greg.dlugoszewski@zapier.com
+[branch]
+    autosetuprebase = always
+[pull]
+    rebase = true

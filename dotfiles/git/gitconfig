@@ -16,10 +16,12 @@
 	default = matching
 [core]
 	autocrlf = input
-		excludesfile = ~/.gitignore_global
-        editor = vim
-
+	excludesfile = ~/.gitignore_global
+	editor = vim
 [gitget]
-        root = ~/repositories
+	root = ~/repositories
 [diff "sopsdiffer"]
 	textconv = sops -d
+
+[includeIf "gitdir:**/github.com/zapier/**"]
+  path = .gitconfig-zapier

@@ -16,6 +16,9 @@
 - link:
     ~/.gitconfig:
       path: dotfiles/git/gitconfig
+    
+    ~/.gitconfig-zapier:
+      path: dotfiles/git/gitconfig-zapier
 
     ~/.gitignore_global:
       path: dotfiles/git/gitignore_global

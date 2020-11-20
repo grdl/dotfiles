@@ -60,6 +60,9 @@
     ~/.ssh/config:
       path: dotfiles/ssh/sshconfig
 
+    ~/Library/KeyBindings/DefaultKeybinding.dict:
+      path: dotfiles/macos/DefaultKeybinding.dict
+
 # Install fisher plugins from fishfile
 - shell:
   - fish -c fisher

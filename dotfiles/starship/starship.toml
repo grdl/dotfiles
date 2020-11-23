@@ -1,4 +1,4 @@
-# Default prompt order but kubernetes moved behind git
+# Default prompt order but push kubernetes towards the end of the prompt
 format = """\
    $username\
    $hostname\
@@ -9,7 +9,6 @@ format = """\
    $git_status\
    $hg_branch\
    $package\
-   $kubernetes\
    $dotnet\
    $elixir\
    $elm\
@@ -26,6 +25,7 @@ format = """\
    $nix_shell\
    $conda\
    $memory_usage\
+   $kubernetes\
    $aws\
    $env_var\
    $crystal\
@@ -41,7 +41,7 @@ format = """\
 symbol = "⛵ "
 style = "245"
 disabled = false
-format = '[$symbol$context( \($namespace\))]($style)'
+format = '[$symbol$context( \($namespace\))]($style) '
 
 [git_branch]
 symbol = "🌱 "

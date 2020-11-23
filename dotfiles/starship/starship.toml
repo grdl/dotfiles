@@ -1,47 +1,47 @@
 # Default prompt order but kubernetes moved behind git
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "hg_branch",
-    "package",
-    "kubernetes",
-    "dotnet",
-    "elixir",
-    "elm",
-    "golang",
-    "haskell",
-    "java",
-    "julia",
-    "nodejs",
-    "php",
-    "python",
-    "ruby",
-    "rust",
-    "terraform",
-    "nix_shell",
-    "conda",
-    "memory_usage",
-    "aws",
-    "env_var",
-    "crystal",
-    "cmd_duration",
-    "line_break",
-    "jobs",
-    "battery",
-    "time",
-    "character",
-]
-
+format = """\
+   $username\
+   $hostname\
+   $directory\
+   $git_branch\
+   $git_commit\
+   $git_state\
+   $git_status\
+   $hg_branch\
+   $package\
+   $kubernetes\
+   $dotnet\
+   $elixir\
+   $elm\
+   $golang\
+   $haskell\
+   $java\
+   $julia\
+   $nodejs\
+   $php\
+   $python\
+   $ruby\
+   $rust\
+   $terraform\
+   $nix_shell\
+   $conda\
+   $memory_usage\
+   $aws\
+   $env_var\
+   $crystal\
+   $cmd_duration\
+   $line_break\
+   $jobs\
+   $battery\
+   $time\
+   $character\
+"""
 
 [kubernetes]
 symbol = "⛵ "
-style = "dimmed 240"
+style = "245"
 disabled = false
+format = '[$symbol$context( \($namespace\))]($style)'
 
 [git_branch]
 symbol = "🌱 "

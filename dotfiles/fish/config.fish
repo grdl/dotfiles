@@ -1,7 +1,10 @@
-# we put downloaded binaries to ~/.local/bin, make sure it's added to $PATH
+# Add ~/.local/bin to PATH
 set PATH ~/.local/bin $PATH
 
-# # Add Go executable and GOPATH to PATH
+# Add Rust binaries to PATH
+set PATH ~/.cargo/bin $PATH
+
+# Add Go executable and GOPATH to PATH
 set PATH /usr/local/go/bin $PATH
 set PATH ~/go/bin $PATH
 
@@ -30,3 +33,7 @@ alias kt "kubetail"
 
 # Enable starship prompt
 starship init fish | source
+
+
+# Load env variables from envrironment file (requires sops)
+loadenv $__fish_config_dir/environment

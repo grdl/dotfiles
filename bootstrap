@@ -2,17 +2,8 @@
 
 set -e
 
-
-# Install Homebrew 
-
+# Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-
 # Install Homebrew packages from Brewfile
-
 brew bundle --file dotfiles/brew/Brewfile
-
-
-# Install Go
-
-wget -qO- https://dl.google.com/go/go1.15.2.darwin-amd64.tar.gz | sudo tar xzf - -C /usr/local

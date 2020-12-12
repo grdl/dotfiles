@@ -4,8 +4,7 @@ set PATH ~/.local/bin $PATH
 # Add Rust binaries to PATH
 set PATH ~/.cargo/bin $PATH
 
-# Add Go executable and GOPATH to PATH
-set PATH /usr/local/go/bin $PATH
+# Add Go binaries to PATH
 set PATH ~/go/bin $PATH
 
 # Set up Pyenv

@@ -29,6 +29,7 @@ alias kc "kubectl"
 alias kx "kubectx"
 alias kn "kubens"
 alias kt "kubetail"
+alias tf "terraform"
 
 
 # Enable starship prompt

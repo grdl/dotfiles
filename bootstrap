@@ -2,8 +2,23 @@
 
 set -e
 
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+bootstrap_macos() {
+  # Install Homebrew if not installed
+  which -s brew
+  if [[ $? != 0 ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
 
-# Install Homebrew packages from Brewfile
-brew bundle --file dotfiles/brew/Brewfile
+  # Install Homebrew packages from Brewfile
+  brew bundle --file dotfiles/brew/Brewfile
+}
+
+boostrap_ubuntu() {
+  echo "ubuntu"
+}
+
+if [ "$(uname)" == "Darwin" ]; then
+  bootstrap_macos
+else
+  bootstrap_ubuntu
+fi

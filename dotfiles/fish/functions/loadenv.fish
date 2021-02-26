@@ -7,6 +7,9 @@
 function loadenv
 	for i in (sops -d $argv)
 		set arr (echo $i |tr = \n)
-  		set -gx $arr[1] $arr[2]
+		# Set variable if line doesn't start with a comment: "#"
+		if string match -v -q '#*' $arr[1]
+  		    set -gx $arr[1] $arr[2]
+  		end
 	end
 end

@@ -1,90 +1,93 @@
-" General 
-
-set linebreak			" Break lines at word (requires Wrap lines) 
-set number                      " Show line numbers
-set showbreak=+++		" Wrap-broken line prefix 
-set textwidth=100		" Line wrap (number of cols) 
-set showmatch			" Highlight matching brace 
-set visualbell			" Use visual bell (no beeping) 
-set hlsearch			" Highlight all search results
-set smartcase			" Enable smart-case search
-set ignorecase			" Always case-insensitive
-set incsearch			" Searches for strings incrementally
- 
-set autoindent			" Auto-indent new lines
-set expandtab			" Use spaces instead of tabs
-set shiftwidth=4		" Number of auto-indent spaces
-set smartindent			" Enable smart-indent
-set smarttab			" Enable smart-tabs
-set softtabstop=4		" Number of spaces per Tab
- 
-set ruler			" Show row and column ruler information
-set undolevels=1000		" Number of undo levels
-set backspace=indent,eol,start	" Backspace behaviour
-
+set nocompatible
+let $VIMHOME = $HOME."/.vim"
 
 " Automatically install vim-plug
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 
-if empty(glob('~/.vim/autoload/plug.vim'))
+"if empty(glob('~/.vim/autoload/plug.vim'))
+if empty($VIMHOME.'/autoload/plug.vim')
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 
-" vim-plug plugins
-
-call plug#begin('~/.vim/vim-plug-plugins')
-
-Plug 'tpope/vim-surround'
-
-Plug 'tpope/vim-sensible'
-
-Plug 'tpope/vim-commentary'
-
-Plug 'preservim/nerdtree'
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'fatih/vim-go'
-
-Plug 'terryma/vim-multiple-cursors'
-
-Plug 'itchyny/lightline.vim'
-
-Plug 'junegunn/fzf.vim'
+call plug#begin($VIMHOME.'/vim-plug-plugins')
 
 Plug 'arcticicestudio/nord-vim'
-
-Plug 'valloric/youcompleteme'
-
-Plug 'majutsushi/tagbar'
-
-Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
+" General
 
-" key mappings
+set backspace=indent,eol,start	" Backspace behaviour
+set history=1000                " Bigger history
+set undolevels=1000		" Bigger number of undo levels
+set showcmd                     " Show incomplete commands
+set shortmess+=F                " Don't show the file name in the command line bar
+set showmode                    " Show current mode
+set autoread                    " Automatically re-read files if unmodified inside Vim
+set hidden                      " Manage multiple buffers effectively
 
-" Toggle nerd tree
-map <C-t> :NERDTreeToggle<CR>
+" User interface
 
-" Open fzf fuzzy search
-map <C-p> :Files<CR>
+colorscheme nord                " Set color scheme
+set laststatus=2                " Always show the status bar
+set ruler                       " Show cursor position
+set wildmenu                    " Show command line’s tab complete options as a menu
+set cursorline                  " Highlight line under cursor
+set linebreak			" Break lines at word (requires Wrap lines) 
+set number                      " Show line numbers
+set relativenumber              " Show relative line numbers
+set noerrorbells                " Disable beep on errors
+set mouse=a                     " Enable mouse for scrolling an resizing
+set title                       " Show filename in windows title
 
-" Toggle Tagbar
-nmap <F8> :TagbarToggle<CR>
+" Swap and backup
 
+if !isdirectory($VIMHOME.'/.backup')
+    call mkdir($VIMHOME.'/.backup')
+endif
 
-" lightline configuration
+if !isdirectory($VIMHOME.'/.swp')
+    call mkdir($VIMHOME.'/.swp')
+endif
+
+set directory=$VIMHOME/.swp//
+set backupdir=$VIMHOME/.backup//
+
+" Indentation
+
+set autoindent			" Auto-indent new lines
+set expandtab			" Use spaces instead of tabs
+filetype plugin indent on       " Smart auto indentation
+set shiftwidth=4		" Number of auto-indent spaces
+set smarttab			" Enable smart-tabs
+set softtabstop=4		" Number of spaces per Tab
+
+" Search
+
+set showmatch			" Highlight matching brace 
+set hlsearch			" Highlight all search results
+set smartcase			" Enable smart-case search
+set ignorecase			" Always case-insensitive
+set incsearch			" Searches for strings incrementally
+ 
+" Text rendering
+
+set encoding=utf-8              " Use unicode
+set nowrap                      " Don't wrap lines
+set scrolloff=3                 " Number of lines to show above and below cursor
+set sidescrolloff=5             " Number of columns to show left and right of cursor
+syntax on                       " Enable syntax highlighting 
+set spell                       " Enable spell checking
+
+" Lightline configuration
+
 set laststatus=2
 set noshowmode
 if !has('gui_running')
     set t_Co=256
 endif
-
-syntax on
-colorscheme nord
-

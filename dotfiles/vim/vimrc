@@ -4,19 +4,19 @@ let $VIMHOME = $HOME."/.vim"
 " Automatically install vim-plug
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 
-"if empty(glob('~/.vim/autoload/plug.vim'))
-if empty($VIMHOME.'/autoload/plug.vim')
+if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 
-call plug#begin($VIMHOME.'/vim-plug-plugins')
+call plug#begin($VIMHOME."/vim-plug-plugins")
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -84,6 +84,7 @@ set sidescrolloff=5             " Number of columns to show left and right of cu
 syntax on                       " Enable syntax highlighting 
 set spell                       " Enable spell checking
 
+
 " Lightline configuration
 
 set laststatus=2
@@ -91,3 +92,18 @@ set noshowmode
 if !has('gui_running')
     set t_Co=256
 endif
+
+
+" NERTTree configuration
+
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+
+" Other configuration
+
+set updatetime=100             " Make the gitgutter updates faster
+

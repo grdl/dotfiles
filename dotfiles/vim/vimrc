@@ -45,17 +45,25 @@ set noerrorbells                " Disable beep on errors
 set mouse=a                     " Enable mouse for scrolling an resizing
 set title                       " Show filename in windows title
 
-" Swap and backup
-
-if !isdirectory($VIMHOME.'/.backup')
-    call mkdir($VIMHOME.'/.backup')
-endif
+" Swap, undo and backup
 
 if !isdirectory($VIMHOME.'/.swp')
     call mkdir($VIMHOME.'/.swp')
 endif
 
 set directory=$VIMHOME/.swp//
+
+if !isdirectory($VIMHOME.'/.undo')
+    call mkdir($VIMHOME.'/.undo')
+endif
+
+set undofile
+set undodir=$VIMHOME/.undo//
+
+if !isdirectory($VIMHOME.'/.backup')
+    call mkdir($VIMHOME.'/.backup')
+endif
+
 set backupdir=$VIMHOME/.backup//
 
 " Indentation

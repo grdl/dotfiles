@@ -17,6 +17,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
+Plug 'takac/vim-hardtime'
 
 call plug#end()
 
@@ -113,5 +114,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Other configuration
 
-set updatetime=100             " Make the gitgutter updates faster
+set updatetime=100              " Make the gitgutter updates faster
+let g:hardtime_default_on = 1   " Enable hard time
 

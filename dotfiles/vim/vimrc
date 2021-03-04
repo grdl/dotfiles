@@ -114,6 +114,9 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Other configuration
 
-set updatetime=100              " Make the gitgutter updates faster
-let g:hardtime_default_on = 1   " Enable hard time
+set updatetime=100                                  " Make the gitgutter updates faster
+let g:hardtime_default_on = 1                       " Enable hard time
+let g:hardtime_allow_different_key=1                " Allow hitting a key different from the previous
+let g:hardtime_ignore_buffer_patterns=["NERD.*"]    " Disable hard time in NERD tree
 
+nmap <silent> <c-l> :set hlsearch!<CR>              " Toggle search highlights with CTRL+L

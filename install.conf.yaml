@@ -48,10 +48,6 @@
     ~/.ideavimrc:
       path: dotfiles/vim/ideavimrc
 
-    ~/.config/Code/User/:
-      path: dotfiles/vscode/*
-      glob: true
-
     ~/.ssh/config:
       path: dotfiles/ssh/sshconfig
 

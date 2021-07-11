@@ -78,11 +78,12 @@ set softtabstop=4		" Number of spaces per Tab
 
 " Search
 
-set showmatch			" Highlight matching brace 
-set hlsearch			" Highlight all search results
-set smartcase			" Enable smart-case search
-set ignorecase			" Always case-insensitive
-set incsearch			" Searches for strings incrementally
+set showmatch			        " Highlight matching brace 
+set hlsearch			        " Highlight all search results
+set smartcase			        " Enable smart-case search
+set ignorecase			        " Always case-insensitive
+set incsearch			        " Searches for strings incrementally
+nmap <silent> <c-l> :set hlsearch!<CR>  " Toggle search highlights with CTRL+L
  
 " Text rendering
 
@@ -91,7 +92,6 @@ set nowrap                      " Don't wrap lines
 set scrolloff=3                 " Number of lines to show above and below cursor
 set sidescrolloff=5             " Number of columns to show left and right of cursor
 syntax on                       " Enable syntax highlighting 
-set spell                       " Enable spell checking
 
 
 " Lightline configuration
@@ -103,7 +103,7 @@ if !has('gui_running')
 endif
 
 
-" NERTTree configuration
+" NERDTree configuration
 
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
@@ -119,4 +119,3 @@ let g:hardtime_default_on = 1                       " Enable hard time
 let g:hardtime_allow_different_key=1                " Allow hitting a key different from the previous
 let g:hardtime_ignore_buffer_patterns=["NERD.*"]    " Disable hard time in NERD tree
 
-nmap <silent> <c-l> :set hlsearch!<CR>              " Toggle search highlights with CTRL+L

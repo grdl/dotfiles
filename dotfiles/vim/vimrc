@@ -18,6 +18,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'takac/vim-hardtime'
+Plug 'junegunn/fzf'
+Plug 'xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 

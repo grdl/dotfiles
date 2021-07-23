@@ -14,6 +14,9 @@
 
 # Symlink dotfiles
 - link:
+    ~/.config/alacritty/alacritty.yml:
+      path: dotfiles/alacritty/alacritty.yml
+
     ~/.gitconfig:
       path: dotfiles/git/gitconfig
     

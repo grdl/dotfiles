@@ -13,8 +13,7 @@ set PATH $PYENV_ROOT/bin $PATH
 pyenv init - | source
 
 
-# Use yubikey as MFA for aws-vault and use the default "login" keychain
-set -gx AWS_VAULT_KEYCHAIN_NAME login
+# Use yubikey as MFA for aws-vault
 set -gx AWS_VAULT_PROMPT ykman
 
 

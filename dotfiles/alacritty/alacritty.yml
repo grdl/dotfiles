@@ -3,6 +3,10 @@ font:
     family: JetBrains Mono NL
   size: 14.0
 
+window:
+  padding:
+    x: 5
+
 # "startup_mode: Maximized" doesn't work on a box with nvidia drivers :/
 # window:
 #   startup_mode: Maximized

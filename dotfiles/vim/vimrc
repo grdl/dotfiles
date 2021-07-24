@@ -17,9 +17,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
+Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'takac/vim-hardtime'
 Plug 'junegunn/fzf'
-Plug 'xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 

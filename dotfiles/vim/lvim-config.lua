@@ -57,6 +57,25 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.direction = "horizontal"
+
+
+-- Disable the default LazyGit maping and add a new one which starts LazyGit in a floating terminal
+
+lvim.builtin.terminal.on_config_done = function()
+  lvim.builtin.which_key.mappings["gg"] = nil
+  vim.api.nvim_del_keymap("n", "<leader>" .. "gg")
+end
+
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float"})
+
+function Lazygit_toggle()
+  lazygit:toggle()
+end
+
+lvim.builtin.which_key.mappings["g"] = { "<cmd>lua Lazygit_toggle()<CR>", "LazyGit" }
+
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 

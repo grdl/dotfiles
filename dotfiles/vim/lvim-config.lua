@@ -83,6 +83,15 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+
+-- Add Projects key to space menu
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+
+-- Only add projects from ~/repositories dir
+lvim.builtin.project.patterns = {
+  "^repositories"
+}
+
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers

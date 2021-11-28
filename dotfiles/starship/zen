@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Toggle the starship config between regular and zen mode.
+
+DOTFILES=$(dirname "$(readlink "$0")")
+LINK=$(readlink ~/.config/starship.toml)
+
+if [ $(basename $LINK) == "starship.toml" ]; then
+  ln -sf $DOTFILES/starship-zen.toml ~/.config/starship.toml
+else
+  ln -sf $DOTFILES/starship.toml ~/.config/starship.toml
+fi

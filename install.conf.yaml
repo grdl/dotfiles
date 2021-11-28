@@ -42,6 +42,9 @@
     ~/.config/starship.toml:
       path: dotfiles/starship/starship.toml
 
+    ~/.local/bin/zen:
+      path: dotfiles/starship/zen
+
     ~/.tmux.conf:
       path: dotfiles/tmux/tmux.conf
 

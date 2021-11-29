@@ -4,3 +4,7 @@ gui:
     # https://github.com/jesseduffield/lazygit/issues/831
     selectedLineBgColor:
       - reverse
+
+keybinding:
+  universal:
+    appendNewline: '<tab>'

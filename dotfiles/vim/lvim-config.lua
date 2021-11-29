@@ -57,24 +57,22 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.terminal.direction = "horizontal"
 
+lvim.builtin.gitsigns.opts = {
+  current_line_blame = true,
+  current_line_blame_opts = {
+    delay = 100,
+    virt_text_pos = "right_align",
+  }
+}
 
--- Disable the default LazyGit maping and add a new one which starts LazyGit in a floating terminal
-
-lvim.builtin.terminal.on_config_done = function()
-  lvim.builtin.which_key.mappings["gg"] = nil
-  vim.api.nvim_del_keymap("n", "<leader>" .. "gg")
-end
-
-local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float"})
-
-function Lazygit_toggle()
-  lazygit:toggle()
-end
-
-lvim.builtin.which_key.mappings["g"] = { "<cmd>lua Lazygit_toggle()<CR>", "LazyGit" }
+-- Simplify git menu
+lvim.builtin.which_key.mappings["g"] = {
+  name = "Git",
+  o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+  b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+  l = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Line Blame" },
+}
 
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
@@ -179,9 +177,6 @@ lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Project
 
 -- Additional Plugins
 lvim.plugins = {
-    -- {"christianchiarulli/nvcode-color-schemes.vim"},
-    -- {'shaunsingh/nord.nvim'},
-    -- {"EdenEast/nightfox.nvim"},
     {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
@@ -193,31 +188,4 @@ lvim.autocommands.custom_groups = {
   -- Refresh NvimTree after lazygit terminal is closed
   { "TermLeave", "*", "NvimTreeRefresh" },
 }
-
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
-
--- local nightfox = require('nightfox')
--- local colors = require('nightfox.colors').init("nordfox")
-
-
--- nightfox.setup({
---   fox = "nordfox",
---   transparent = true,
-
---   hlgroups = {
---     CursorLine = { bg = colors.bg_alt },
---     Pmenu = { bg = "#2e3440" },
---     NormalFloat = { bg = "#ff0000"}
---   },
---   -- colors = {
---   --   bg_alt = "#000000",
---   --   bg_popup = "#ffffff"
---   -- },
--- })
-
--- nightfox.load()
 

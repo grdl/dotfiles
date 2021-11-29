@@ -11,10 +11,11 @@ set PATH ~/go/bin $PATH
 set -x PYENV_ROOT $HOME/.pyenv
 set PATH $PYENV_ROOT/bin $PATH
 pyenv init - | source
+status is-interactive; and pyenv init --path | source
 
+set PATH $HOME/.poetry/bin $PATH
 
-# Use yubikey as MFA for aws-vault
-set -gx AWS_VAULT_PROMPT ykman
+set -gx EDITOR lvim
 
 
 # Disable fish greeting
@@ -28,7 +29,7 @@ alias kx "kubectx"
 alias kn "kubens"
 alias kt "kubetail"
 alias tf "terraform"
-
+alias vim "lvim"
 
 # Enable starship prompt
 starship init fish | source

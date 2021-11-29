@@ -106,10 +106,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Add Projects key to space menu
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
--- Only add projects from ~/repositories dir
-lvim.builtin.project.patterns = {
-  "^repositories"
-}
 
 -- generic LSP settings
 
@@ -191,6 +187,13 @@ lvim.plugins = {
       cmd = "TroubleToggle",
     },
 }
+
+
+lvim.autocommands.custom_groups = {
+  -- Refresh NvimTree after lazygit terminal is closed
+  { "TermLeave", "*", "NvimTreeRefresh" },
+}
+
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {

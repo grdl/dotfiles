@@ -1,7 +1,16 @@
 font:
   normal:
-   family: JetBrainsMonoMedium Nerd Font
+    family: MonoLisa Nerd Font
+    style: Regular
+  bold:
+    family: MonoLisa Nerd Font
+    style: Bold
+  italic:
+    family: MonoLisa Nerd Font
+    style: Italic
+
   size: 14.0
+  use_thin_strokes: true
 
 window:
   decorations: buttonless

@@ -9,6 +9,10 @@ font:
     family: MonoLisa Nerd Font
     style: Italic
 
+  # adding a small line offset makes the vertical lines smooth when using MonoLisa
+  offset:
+    y: -2
+
   size: 14.0
   use_thin_strokes: true
 

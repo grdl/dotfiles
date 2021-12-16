@@ -59,6 +59,7 @@
 
     ~/.config/lvim/config.lua:
       path: dotfiles/vim/lvim-config.lua
+      force: true
 
     ~/.ssh/config:
       path: dotfiles/ssh/sshconfig

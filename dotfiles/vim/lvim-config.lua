@@ -5,6 +5,8 @@ lvim.builtin.terminal.active = true
 
 -- Enable inline git blame
 lvim.builtin.gitsigns.opts = {
+  -- Disable gitsigns keymapping. They conflict with <leader>+h and are added to which_key anyway.
+  keymaps = {},
   current_line_blame = true,
   current_line_blame_opts = {
     delay = 0,
@@ -24,9 +26,26 @@ vim.g.nvim_tree_special_files = {}
 lvim.builtin.treesitter.ensure_installed = "maintained"
 
 -- Key mappings for which_key popups
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["gL"] = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Line Blame Toggle" }
 lvim.builtin.which_key.mappings["t"] = { "<cmd>TroubleToggle<CR>", "Trouble" }
+
+
+lvim.builtin.which_key.mappings["s"] = {
+    name = "Search",
+    e = { "<cmd>Telescope file_browser<cr>", "File Browser" },
+    f = { "<cmd>Telescope find_files<cr>", "Files" },
+    H = { "<cmd>Telescope help_tags<cr>", "Help Tags" },
+    h = { "<cmd>Telescope search_history<cr>", "Search history" },
+    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    p = { "<cmd>Telescope projects<CR>", "Projects" },
+    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    B = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
+    g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+    R = { "<cmd>Telescope resume<cr>", "Resume" },
+    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
+    c = { "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>", "Colorscheme" },
+}
 
 -- Additional Plugins
 lvim.plugins = {

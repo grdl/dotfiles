@@ -3,14 +3,11 @@
       relink: true
       create: true
 
-
 - clean: ["~"]
-
 
 - create:
     - ~/repositories
     - ~/.local/bin
-
 
 # Symlink dotfiles
 - link:
@@ -19,7 +16,7 @@
 
     ~/.gitconfig:
       path: dotfiles/git/gitconfig
-    
+
     ~/.gitconfig-zapier:
       path: dotfiles/git/gitconfig-zapier
 
@@ -53,7 +50,7 @@
 
     ~/.vimrc:
       path: dotfiles/vim/vimrc
-    
+
     ~/.ideavimrc:
       path: dotfiles/vim/ideavimrc
 
@@ -69,15 +66,13 @@
 
 # Install fisher plugins from fishfile
 - shell:
-  - fish -c fisher
-
+    - fish -c fisher
 
 # Clone repos from repos_dump using git-get
 - shell:
-  - git get -d dotfiles/git/repos_dump
+    - git get -d dotfiles/git/repos_dump
 
-
-# Symlink tools (need to be cloned first) 
+# Symlink tools (need to be cloned first)
 - link:
     ~/.local/bin/kubetail:
       path: ~/repositories/github.com/johanhaleby/kubetail/kubetail

@@ -37,3 +37,7 @@ starship init fish | source
 
 # Load env variables from envrironment file (requires sops)
 loadenv $__fish_config_dir/environment
+
+# Default clear does not recognize the TERM set by tmux, so we rebind it here
+# https://superuser.com/q/319912/1159795
+bind \cl 'TERM=xterm clear; commandline -f repaint'

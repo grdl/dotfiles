@@ -70,6 +70,10 @@ lvim.autocommands.custom_groups = {
 vim.o.relativenumber = true
 vim.o.cmdheight = 1
 
+-- Don't use fish shell in vim as it causes slowness and other issues
+-- https://github.com/fish-shell/fish-shell/issues/7004#issuecomment-628530961
+vim.o.shell = "/bin/sh"
+
 -- Make telescope window bigger
 lvim.builtin.telescope.defaults.layout_config.width = 0.9
 

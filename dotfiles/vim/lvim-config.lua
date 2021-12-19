@@ -1,4 +1,9 @@
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "nord"
+
+vim.g.nord_borders = true
+vim.g.nord_contrast = true
+vim.g.nord_italic = true
+vim.g.nord_enable_sidebar_background = false
 
 -- Enable terminal to use LazyGit
 lvim.builtin.terminal.active = true
@@ -17,7 +22,6 @@ lvim.builtin.gitsigns.opts = {
 -- Use icons instead of highlights for git status in nvim_tree
 lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.nvimtree.git_hl = 0
-lvim.builtin.nvimtree.hide_dotfiles = 0
 
 -- Don't highlight any special files in nvim_tree
 vim.g.nvim_tree_special_files = {}
@@ -52,6 +56,7 @@ lvim.plugins = {
 		"folke/trouble.nvim",
 		cmd = "TroubleToggle",
 	},
+	{ "shaunsingh/nord.nvim" },
 }
 
 lvim.autocommands.custom_groups = {
@@ -66,7 +71,6 @@ vim.o.cmdheight = 1
 lvim.builtin.telescope.defaults.layout_config.width = 0.9
 
 -- Remove the stupid scrollbar from lualine
-lvim.builtin.lualine.sections.lualine_x = { "encoding", "filetype" }
 lvim.builtin.lualine.sections.lualine_y = { "location", "progress" }
 lvim.builtin.lualine.sections.lualine_z = {}
 

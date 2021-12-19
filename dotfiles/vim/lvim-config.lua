@@ -62,6 +62,9 @@ lvim.plugins = {
 lvim.autocommands.custom_groups = {
 	-- Refresh NvimTree after lazygit terminal is closed
 	{ "TermLeave", "*", "NvimTreeRefresh" },
+
+	-- Hacky way to make the git blame line visible when Nord theme cursor line is enabled
+	{ "VimEnter", "*", "highlight gitsignscurrentlineblame guifg=#5d6982" },
 }
 
 vim.o.relativenumber = true

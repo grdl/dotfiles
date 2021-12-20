@@ -26,6 +26,9 @@ shell:
     - -c
     - /usr/local/bin/tmux new-session -A -s main
 
+env:
+  TERM: xterm-256color
+
 # Nord theme for Alacritty
 # https://github.com/arcticicestudio/nord-alacritty
 colors:

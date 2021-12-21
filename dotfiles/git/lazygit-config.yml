@@ -1,10 +1,26 @@
 gui:
+  showRandomTip: false
+  showCommandLog: false
+  expandFocusedSidePanel: true
+
   theme:
     # Needed to make the selected line visible in Alacritty
     # https://github.com/jesseduffield/lazygit/issues/831
     selectedLineBgColor:
       - reverse
+    activeBorderColor:
+      - "#5E81AC"
+      - bold
+    inactiveBorderColor:
+      - "#4C566A"
 
 keybinding:
   universal:
-    appendNewline: '<tab>'
+    appendNewline: "<tab>"
+
+os:
+  editCommand: "lvim"
+
+git:
+  log:
+    showGraph: always

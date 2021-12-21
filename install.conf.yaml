@@ -72,6 +72,7 @@
 - shell:
     - git get -d dotfiles/git/repos_dump
 
+# TODO either remove or add as brew package
 # Symlink tools (need to be cloned first)
 - link:
     ~/.local/bin/kubetail:

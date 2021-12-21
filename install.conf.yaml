@@ -71,10 +71,3 @@
 # Clone repos from repos_dump using git-get
 - shell:
     - git get -d dotfiles/git/repos_dump
-
-# TODO either remove or add as brew package
-# Symlink tools (need to be cloned first)
-- link:
-    ~/.local/bin/kubetail:
-      path: ~/repositories/github.com/johanhaleby/kubetail/kubetail
-      ignore-missing: true

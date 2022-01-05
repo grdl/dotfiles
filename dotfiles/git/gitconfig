@@ -34,3 +34,21 @@
   path = .gitconfig-zapier
 [includeIf "gitdir:**/gitlab.com/zapier/**"]
   path = .gitconfig-zapier
+
+
+# Delta diff config and tiny Nord theme
+[delta]
+  syntax-theme = Nord
+  dark = false
+  file-style = "#5E81AC"
+  minus-style = normal "#BF616A"
+  minus-emph-style = normal "#9C3A43"
+  plus-style = syntax "#387C79"
+  plus-emph-style = syntax "#094947"
+  line-numbers = true
+  line-numbers-minus-style = "#BF616A"
+  line-numbers-plus-style = "#387C79"
+  line-numbers-zero-style = "#4C566A"
+  hunk-header-decoration-style = none 
+  hunk-header-style = none
+

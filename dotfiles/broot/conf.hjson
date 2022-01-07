@@ -60,4 +60,55 @@
     help_code : "rgb(216, 222, 233) rgb(46, 52, 64)"
     help_headers : "rgb(94, 129, 172) none bold"
   }
+
+
+verbs: [
+    {
+      name: touch
+      invocation: touch {new_file}
+      execution: "touch {directory}/{new_file}"
+      leave_broot: false
+    }
+		{
+			invocation: create {subpath}
+			execution: "$EDITOR {directory}/{subpath}"
+			leave_broot: false
+		}
+		{
+			invocation: edit
+      key: enter
+			shortcut: e
+			execution: "$EDITOR +{line} {file}"
+			leave_broot: false
+      apply_to: file
+		}
+    {
+      invocation: lazygit
+      shortcut: gg
+      execution: "lazygit {directory}"
+      leave_broot: false
+    }
+		{
+			invocation: "backup {version}"
+			key: ctrl-b
+			leave_broot: false
+			auto_exec: false
+			execution: "cp -r {file} {parent}/{file-stem}-{version}{file-dot-extension}"
+		}
+		{
+			invocation: terminal
+			key: ctrl-t
+			execution: "$SHELL"
+			set_working_dir: true
+			leave_broot: false
+		}
+	  {
+      invocation: home
+      execution: ":focus ~"
+	  }
+	  {
+      invocation: repos
+      execution: ":focus ~/repositories"
+	  }
+  ]
 }

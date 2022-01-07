@@ -28,12 +28,13 @@ alias kx "kubectx"
 alias kn "kubens"
 alias kt "kubetail"
 alias vim "lvim"
-alias hh "history merge"
-alias gg "lazygit"
 
 abbr -g kc kubectl
 abbr -g tf terraform
 abbr -g gs git status
+abbr -g gg lazygit
+abbr -g hh history merge
+abbr -g bb br
 
 
 # Enable starship prompt

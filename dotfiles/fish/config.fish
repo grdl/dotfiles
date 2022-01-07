@@ -24,6 +24,8 @@ set fish_greeting
 # Set aliases
 alias ll "lsd -hAl --group-dirs first --date relative --total-size --icon never"
 alias lll "lsd -hAl --group-dirs first --date date --icon never"
+alias bb "br --conf=$HOME/.config/broot/conf-lite.hjson"
+alias bbb "br" 
 alias kx "kubectx"
 alias kn "kubens"
 alias kt "kubetail"
@@ -34,7 +36,6 @@ abbr -g tf terraform
 abbr -g gs git status
 abbr -g gg lazygit
 abbr -g hh history merge
-abbr -g bb br
 
 
 # Enable starship prompt

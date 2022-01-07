@@ -1,12 +1,12 @@
 {
-  modal : true
+  modal : false
 
 # g - show git status
-# h - show hidden files
-# d - show dates
-# p - show permissions
-# s - show sizes
-  default_flags : "ghdps"
+# H - don't show hidden files
+# D - don't show dates
+# P - don't show permissions
+# S - don't show sizes
+  default_flags : "gHDPS"
 
 # https://docs.rs/chrono/0.4.11/chrono/format/strftime/index.html
   date_time_format : "%y-%m-%d %T"
@@ -59,10 +59,15 @@
     help_italic : "rgb(191, 97, 106) rgb(46, 52, 64) italic"
     help_code : "rgb(216, 222, 233) rgb(46, 52, 64)"
     help_headers : "rgb(94, 129, 172) none bold"
+    preview: "rgb(129, 161, 193) rgb(46, 52, 64)"
+    preview_title: "rgb(129, 161, 193) rgb(46, 52, 64)" 
+    preview_line_number: "rgb(129, 161, 193) rgb(46, 52, 64)" 
+    preview_line_match: "rgb(129, 161, 193) rgb(46, 52, 64)" 
   }
 
+  syntax_theme: base16-mocha.dark
 
-verbs: [
+  verbs: [
     {
       name: touch
       invocation: touch {new_file}
@@ -110,5 +115,13 @@ verbs: [
       invocation: repos
       execution: ":focus ~/repositories"
 	  }
+    {
+      key: shift-h
+      internal: ":panel_left"
+    }
+    {
+      key: shift-l
+      internal: ":panel_right"
+    }
   ]
 }

@@ -64,9 +64,8 @@
     ~/Library/KeyBindings/DefaultKeybinding.dict:
       path: dotfiles/macos/DefaultKeybinding.dict
 
-    ~/.config/broot:
-      path: dotfiles/broot/*
-      glob: true
+    ~/.config/broot/conf.hjson:
+      path: dotfiles/broot/conf.hjson
       force: true
 
 # Install fisher plugins from fishfile

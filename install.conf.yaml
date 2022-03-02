@@ -68,6 +68,9 @@
       path: dotfiles/broot/conf.hjson
       force: true
 
+    ~/.config/k9s/skin.yml:
+      path: dotfiles/k9s/skin.yml
+
 # Install fisher plugins from fishfile
 - shell:
     - fish -c fisher

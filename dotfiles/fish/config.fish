@@ -17,6 +17,8 @@ set PATH $HOME/.poetry/bin $PATH
 
 set -gx EDITOR lvim
 
+# Set XDG_CONFIG_HOME to load k9s config
+set -gx XDG_CONFIG_HOME $HOME/.config
 
 # Disable fish greeting
 set fish_greeting

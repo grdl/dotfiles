@@ -38,6 +38,7 @@ abbr -g gg lazygit
 abbr -g hh history merge
 abbr -g b br
 abbr -g bb br -hdps
+abbr -g vv vim .
 
 
 # Enable starship prompt

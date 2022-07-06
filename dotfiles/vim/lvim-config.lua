@@ -11,6 +11,22 @@ lvim.builtin.terminal.active = true
 -- Additional Plugins
 lvim.plugins = {
   { "shaunsingh/nord.nvim" },
+  {
+    "ruifm/gitlinker.nvim",
+    event = "BufRead",
+    config = function()
+      require("gitlinker").setup {
+        opts = {
+          add_current_line_on_normal_mode = true,
+          action_callback = require("gitlinker.actions").open_in_browser,
+          print_url = false,
+        },
+        mappings = "<leader>gO",
+
+      }
+    end,
+  },
+
 }
 
 lvim.autocommands = {
@@ -68,3 +84,5 @@ lvim.lsp.automatic_servers_installation = true
 lvim.builtin.which_key.mappings["gL"] = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Line Blame Toggle" }
 
 lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" }
+
+lvim.builtin.which_key.mappings["gO"] = { "<cmd>lua require'gitlinker'.get_buf_range_url('n')<cr>", "Open In Browser" }

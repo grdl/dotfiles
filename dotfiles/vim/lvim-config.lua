@@ -86,3 +86,7 @@ lvim.builtin.which_key.mappings["gL"] = { "<cmd>Gitsigns toggle_current_line_bla
 lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" }
 
 lvim.builtin.which_key.mappings["gO"] = { "<cmd>lua require'gitlinker'.get_buf_range_url('n')<cr>", "Open In Browser" }
+
+-- Open a lazygit history of a current file
+table.insert(lvim.builtin.terminal.execs,
+  { "lazygit -f " .. vim.api.nvim_buf_get_name(0), "<leader>gh", "File History", "float" })

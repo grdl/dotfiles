@@ -61,8 +61,9 @@ vim.o.shell = "/bin/sh"
 -- Use icons instead of highlights for git status in nvim_tree
 lvim.builtin.nvimtree.setup.renderer.highlight_git = false
 
--- Don't highlight any special files in nvim_tree
+-- Don't highlight any special files in nvim_tree, don't show .git folder
 lvim.builtin.nvimtree.setup.renderer.special_files = {}
+lvim.builtin.nvimtree.setup.filters.custom = { "^\\.git" }
 
 -- Don't open nvimtree on half of the screen
 -- https://github.com/kyazdani42/nvim-tree.lua/issues/1071

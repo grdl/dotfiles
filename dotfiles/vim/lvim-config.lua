@@ -26,7 +26,10 @@ lvim.plugins = {
       }
     end,
   },
-
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
 }
 
 lvim.autocommands = {
@@ -90,3 +93,15 @@ lvim.builtin.which_key.mappings["gO"] = { "<cmd>lua require'gitlinker'.get_buf_r
 
 lvim.builtin.which_key.mappings["gh"] = { "<cmd>TermExec cmd='lazygit -f %:p; exit'<cr>", "File History" }
 lvim.builtin.which_key.mappings["gH"] = { "<cmd>TermExec cmd='lazygit -f %:p:h; exit'<cr>", "Folder History" }
+
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Diagnostics",
+  t = { "<cmd>TroubleToggle<cr>", "Trouble" },
+  w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace" },
+  d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document" },
+  q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+  l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
+  r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+  e = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definitions" },
+  E = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "Type Definitions" },
+}

@@ -39,6 +39,7 @@ abbr -g hh history merge
 abbr -g b br
 abbr -g bb br -hdps
 abbr -g vv vim .
+abbr -g av aws-vault exec 
 
 
 # Enable starship prompt

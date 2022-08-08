@@ -38,10 +38,14 @@ format = """\
 """
 
 [kubernetes]
-symbol = "⛵ "
+symbol = "⛵"
 style = "245"
 disabled = false
 format = '[$symbol$context( \($namespace\))]($style) '
 
+[aws]
+symbol = "⛅"
+format = '[($symbol($profile ))]($style)'
+
 [git_branch]
-symbol = "🌱 "
+symbol = "🌱"

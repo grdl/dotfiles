@@ -8,8 +8,9 @@ vim.g.nord_enable_sidebar_background = false
 -- Enable terminal to use LazyGit
 lvim.builtin.terminal.active = true
 
--- Disable the project manager plugin
+-- Disable unnecessary plugins
 lvim.builtin.project.active = false
+lvim.builtin.breadcrumbs.active = false
 
 -- Additional Plugins
 lvim.plugins = {

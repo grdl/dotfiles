@@ -8,6 +8,9 @@ vim.g.nord_enable_sidebar_background = false
 -- Enable terminal to use LazyGit
 lvim.builtin.terminal.active = true
 
+-- Disable the project manager plugin
+lvim.builtin.project.active = false
+
 -- Additional Plugins
 lvim.plugins = {
   { "shaunsingh/nord.nvim" },
@@ -30,7 +33,20 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
+  {
+    "sudormrfbin/cheatsheet.nvim"
+  },
 }
+
+-- Telescope config
+lvim.builtin.telescope = {
+  active = true,
+  defaults = {
+    layout_strategy = "horizontal",
+    layout_config = { width = 0.9, height = 0.9, prompt_position = "top" }
+  }
+}
+
 
 lvim.autocommands = {
   {
@@ -45,6 +61,7 @@ lvim.autocommands = {
 
 vim.o.relativenumber = true
 vim.o.cmdheight = 1
+vim.opt.timeoutlen = 50
 
 -- Enable inline git blame
 lvim.builtin.gitsigns.opts = {
@@ -72,9 +89,6 @@ lvim.builtin.nvimtree.setup.filters.custom = { "^\\.git" }
 -- https://github.com/kyazdani42/nvim-tree.lua/issues/1071
 lvim.builtin.nvimtree.setup.actions.open_file.resize_window = true
 
--- Make telescope window bigger
-lvim.builtin.telescope.defaults.layout_config.width = 0.9
-
 -- Remove the stupid scrollbar from lualine
 lvim.builtin.lualine.sections.lualine_y = { "location", "progress" }
 lvim.builtin.lualine.sections.lualine_z = {}
@@ -88,6 +102,7 @@ lvim.lsp.automatic_servers_installation = true
 lvim.builtin.which_key.mappings["gL"] = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Line Blame Toggle" }
 
 lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope live_grep<cr>", "Live Grep" }
+lvim.builtin.which_key.mappings["sz"] = { "<cmd>Telescope resume<cr>", "Resume search"}
 
 lvim.builtin.which_key.mappings["gO"] = { "<cmd>lua require'gitlinker'.get_buf_range_url('n')<cr>", "Open In Browser" }
 

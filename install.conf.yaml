@@ -23,7 +23,7 @@
     ~/.gitignore_global:
       path: dotfiles/git/gitignore_global
 
-    ~/Library/Application Support/lazygit/config.yml:
+    ~/.config/lazygit/config.yml:
       path: dotfiles/git/lazygit-config.yml
 
     ~/.config/fish/config.fish:

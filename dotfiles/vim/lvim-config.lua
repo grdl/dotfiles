@@ -37,6 +37,11 @@ lvim.plugins = {
   {
     "sudormrfbin/cheatsheet.nvim"
   },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require"lsp_signature".on_attach() end,
+  },
 }
 
 -- Telescope config
@@ -48,6 +53,20 @@ lvim.builtin.telescope = {
   }
 }
 
+-- Re-enable which_key plugins
+lvim.builtin.which_key.setup.plugins = {
+  marks = true,
+  registers = true,
+  presets = {
+    operators = true,
+    motions = true,
+    text_objects = true,
+    windows = true,
+    nav = true,
+    z = true,
+    g = true,
+  }
+}
 
 lvim.autocommands = {
   {

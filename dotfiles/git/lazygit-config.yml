@@ -31,4 +31,9 @@ git:
 
   paging:
     colorArg: always
-    pager: delta --paging=never --24-bit-color=never
+    # useConfig: true
+    # pager: delta --dark --paging=never
+    # pager: difft "$LOCAL" "$REMOTE"
+    pager: difftool
+    # pager: delta --paging=never --24-bit-color=never
+

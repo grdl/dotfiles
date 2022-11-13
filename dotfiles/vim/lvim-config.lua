@@ -35,7 +35,10 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   {
-    "sudormrfbin/cheatsheet.nvim"
+    "sudormrfbin/cheatsheet.nvim",
+  },
+  {
+    "tpope/vim-surround",
   },
   {
     "ray-x/lsp_signature.nvim",

@@ -5,9 +5,16 @@ vim.g.nord_contrast = true
 vim.g.nord_italic = true
 vim.g.nord_enable_sidebar_background = false
 
--- Enable terminal to use LazyGit
-lvim.builtin.terminal.active = true
+vim.o.relativenumber = true
+vim.o.cmdheight = 1
 
+-- Reduce latency for which_key pop up
+vim.o.timeoutlen = 50
+
+-- Don't use fish shell in vim as it causes slowness and other issues
+-- https://github.com/fish-shell/fish-shell/issues/7004#issuecomment-628530961
+vim.o.shell = "/bin/sh"
+  
 -- Disable unnecessary plugins
 lvim.builtin.project.active = false
 lvim.builtin.breadcrumbs.active = false
@@ -49,7 +56,6 @@ lvim.plugins = {
 
 -- Telescope config
 lvim.builtin.telescope = {
-  active = true,
   defaults = {
     layout_strategy = "horizontal",
     layout_config = { width = 0.9, height = 0.9, prompt_position = "top" }
@@ -71,21 +77,6 @@ lvim.builtin.which_key.setup.plugins = {
   }
 }
 
-lvim.autocommands = {
-  {
-    -- Refresh NvimTree after lazygit terminal is closed
-    "TermLeave",
-    {
-      pattern = { "*" },
-      command = "NvimTreeRefresh"
-    }
-  },
-}
-
-vim.o.relativenumber = true
-vim.o.cmdheight = 1
-vim.opt.timeoutlen = 50
-
 -- Enable inline git blame
 lvim.builtin.gitsigns.opts = {
   -- Disable gitsigns keymapping. They conflict with <leader>+h and are added to which_key anyway.
@@ -97,10 +88,6 @@ lvim.builtin.gitsigns.opts = {
   },
 }
 
--- Don't use fish shell in vim as it causes slowness and other issues
--- https://github.com/fish-shell/fish-shell/issues/7004#issuecomment-628530961
-vim.o.shell = "/bin/sh"
-
 -- Use icons instead of highlights for git status in nvim_tree
 lvim.builtin.nvimtree.setup.renderer.highlight_git = false
 
@@ -111,6 +98,12 @@ lvim.builtin.nvimtree.setup.filters.custom = { "^\\.git" }
 -- Don't open nvimtree on half of the screen
 -- https://github.com/kyazdani42/nvim-tree.lua/issues/1071
 lvim.builtin.nvimtree.setup.actions.open_file.resize_window = true
+
+-- Focus on nvim_tree automatically when opening a directory
+lvim.builtin.nvimtree.setup.hijack_directories.enable = true
+
+-- This reloads nvim_tree when lazugit closes
+lvim.builtin.nvimtree.setup.auto_reload_on_write = true
 
 -- Remove the stupid scrollbar from lualine
 lvim.builtin.lualine.sections.lualine_y = { "location", "progress" }
@@ -142,6 +135,7 @@ lvim.builtin.which_key.mappings["t"] = {
   r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
   e = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definitions" },
   E = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "Type Definitions" },
+  i = { "<cmd>TroubleToggle lsp_implementations<cr>", "Implementations" },
 }
 
 lvim.keys.normal_mode["<S-h>"] = ":bprevious<CR>"

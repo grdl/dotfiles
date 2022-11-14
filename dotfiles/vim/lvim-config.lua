@@ -45,15 +45,6 @@ lvim.plugins = {
     event = "BufRead",
     config = function() require"lsp_signature".on_attach() end,
   },
-  {
-    "kevinhwang91/nvim-bqf",
-    event = { "BufRead", "BufNew" },
-    config = function()
-    require("bqf").setup({
-            auto_enable = true,
-            })
-    end,
-  },
 }
 
 -- Telescope config

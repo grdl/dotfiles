@@ -143,3 +143,6 @@ lvim.builtin.which_key.mappings["t"] = {
   e = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definitions" },
   E = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "Type Definitions" },
 }
+
+lvim.keys.normal_mode["<S-h>"] = ":bprevious<CR>"
+lvim.keys.normal_mode["<S-l>"] = ":bnext<CR>"

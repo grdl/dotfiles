@@ -12,8 +12,10 @@
 	unstage = reset HEAD --
 	dc = diff --cached
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
-        # git gone alias based on https://www.erikschierboom.com/2020/02/17/cleaning-up-local-git-branches-deleted-on-a-remote
-        gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D"
+
+  # git gone alias based on https://www.erikschierboom.com/2020/02/17/cleaning-up-local-git-branches-deleted-on-a-remote
+  gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D"
+
 [push]
 	default = matching
 [fetch]
@@ -34,21 +36,4 @@
   path = .gitconfig-zapier
 [includeIf "gitdir:**/gitlab.com/zapier/**"]
   path = .gitconfig-zapier
-
-
-# Delta diff config and tiny Nord theme
-[delta]
-  syntax-theme = Nord
-  dark = false
-  file-style = "#5E81AC"
-  minus-style = normal "#BF616A"
-  minus-emph-style = normal "#9C3A43"
-  plus-style = syntax "#387C79"
-  plus-emph-style = syntax "#094947"
-  line-numbers = true
-  line-numbers-minus-style = "#BF616A"
-  line-numbers-plus-style = "#387C79"
-  line-numbers-zero-style = "#4C566A"
-  hunk-header-decoration-style = none 
-  hunk-header-style = none
 

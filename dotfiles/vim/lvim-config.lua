@@ -54,8 +54,11 @@ lvim.plugins = {
   },
 }
 
+lvim.builtin.treesitter.auto_install = true
+
 -- Telescope config
 lvim.builtin.telescope = {
+  active = true,
   defaults = {
     layout_strategy = "horizontal",
     layout_config = { width = 0.9, height = 0.9, prompt_position = "top" }

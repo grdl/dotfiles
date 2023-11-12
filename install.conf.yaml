@@ -51,9 +51,8 @@
     ~/.ideavimrc:
       path: dotfiles/vim/ideavimrc
 
-    ~/.config/lvim/config.lua:
-      path: dotfiles/vim/lvim-config.lua
-      force: true
+    ~/.config/nvim:
+      path: dotfiles/nvim
 
     ~/.ssh/config:
       path: dotfiles/ssh/sshconfig

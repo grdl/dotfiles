@@ -23,7 +23,7 @@ keybinding:
     appendNewline: "<tab>"
 
 os:
-  editCommand: "lvim"
+  editCommand: "nvim"
 
 git:
   log:

@@ -32,9 +32,6 @@
     ~/.config/fish/fishfile:
       path: dotfiles/fish/fishfile
 
-    ~/.config/fish/environment:
-      path: dotfiles/fish/environment
-
     ~/.config/fish:
       path: dotfiles/fish/**/*
       glob: true

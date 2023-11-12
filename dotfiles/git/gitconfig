@@ -29,11 +29,6 @@
 [diff "sopsdiffer"]
 	textconv = sops -d
 
-[includeIf "gitdir:**/github.com/zapier/**"]
-  path = .gitconfig-zapier
-
-[includeIf "gitdir:**/gitlab.zapier.com/**"]
-  path = .gitconfig-zapier
 [includeIf "gitdir:**/gitlab.com/zapier/**"]
   path = .gitconfig-zapier
 

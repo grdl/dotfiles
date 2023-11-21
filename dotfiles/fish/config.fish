@@ -2,6 +2,7 @@
 set -gx EDITOR nvim
 
 # Add stuff to PATH
+set PATH /opt/homebrew/bin $PATH
 set PATH ~/.local/bin $PATH
 set PATH ~/.cargo/bin $PATH
 set PATH ~/go/bin $PATH
@@ -9,8 +10,6 @@ set PATH ~/.krew/bin $PATH
 set PATH ~/.poetry/bin $PATH
 
 # Set up Pyenv
-set -x PYENV_ROOT $HOME/.pyenv
-set PATH $PYENV_ROOT/bin $PATH
 pyenv init - | source
 status is-interactive; and pyenv init --path | source
 

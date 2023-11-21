@@ -29,8 +29,8 @@
     ~/.config/fish/config.fish:
       path: dotfiles/fish/config.fish
 
-    ~/.config/fish/fishfile:
-      path: dotfiles/fish/fishfile
+    ~/.config/fish/fish_plugins:
+      path: dotfiles/fish/fish_plugins
 
     ~/.config/fish:
       path: dotfiles/fish/**/*
@@ -67,9 +67,9 @@
     ~/.config/k9s/skin.yml:
       path: dotfiles/k9s/skin.yml
 
-# Install fisher plugins from fishfile
+# Install fisher plugins from fish_plugins file
 - shell:
-    - fish -c fisher
+    - command: /opt/homebrew/bin/fish -c fisher update
 
 # Clone repos from repos_dump using git-get
 - shell:

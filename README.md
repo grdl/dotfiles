@@ -1,6 +1,6 @@
 # Dotfiles
 
-Manage your dotfiles and bootstrap your workstation with [Dotbot](https://github.com/cnishathalye/dotbot) and a simple shell script.
+Manage your dotfiles and bootstrap your workstation with [Dotbot](https://github.com/anishathalye/dotbot) and a simple shell script.
 
 Both `bootstrap` and `install` scripts are idempotent - it's safe to run them multiple times.
 

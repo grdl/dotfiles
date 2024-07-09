@@ -19,6 +19,9 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 # Disable fish greeting
 set fish_greeting
 
+# Set default node version
+set -U nvm_default_version v18
+
 # Set aliases
 alias ll "lsd -hAl --group-dirs first --date relative --total-size --icon never"
 alias lll "lsd -hAl --group-dirs first --date date --icon never"

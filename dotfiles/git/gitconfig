@@ -31,4 +31,9 @@
 
 [includeIf "gitdir:**/gitlab.com/zapier/**"]
   path = .gitconfig-zapier
-
+[includeIf "hasconfig:remote.*.url:ssh://git@gitlab.com/zapier/**"]
+  path = .gitconfig-zapier
+[includeIf "hasconfig:remote.*.url:git@gitlab.com:zapier/**"]
+  path = .gitconfig-zapier
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/zapier/**"]
+  path = .gitconfig-zapier

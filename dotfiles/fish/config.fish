@@ -1,6 +1,8 @@
 # Set Vim as default editor
 set -gx EDITOR nvim
 
+set -gx FZF_DEFAULT_OPTS "--bind 'tab:toggle-up,btab:toggle-down' --cycle"
+
 # Add stuff to PATH
 set PATH /opt/homebrew/bin $PATH
 set PATH ~/.local/bin $PATH
@@ -26,8 +28,11 @@ set -U nvm_default_version v18
 alias ll "lsd -hAl --group-dirs first --date relative --total-size --icon never"
 alias lll "lsd -hAl --group-dirs first --date date --icon never"
 
+# Repos switcher
+alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | sort -u | fzf --tmux --exact) && nvim ."
+
 abbr --erase (abbr --list)
-abbr -g kc kubectl
+abbr -g k kubectl
 abbr -g kx kubectx
 abbr -g kn kubens
 abbr -g kt kubetail
@@ -37,6 +42,7 @@ abbr -g gg lazygit
 abbr -g hh history merge
 abbr -g b br
 abbr -g bb br -hdps
+abbr -g bbb br ~/repositories
 abbr -g vv nvim .
 abbr -g av aws-vault exec
 

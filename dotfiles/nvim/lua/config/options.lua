@@ -5,3 +5,6 @@
 -- Don't use fish shell in vim as it causes slowness and other issues
 -- https://github.com/fish-shell/fish-shell/issues/7004#issuecomment-628530961
 vim.opt.shell = "/bin/sh"
+
+-- Disable root dir detection (It messes up search results)
+vim.g.root_spec = { "cwd" }

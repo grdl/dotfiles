@@ -31,11 +31,12 @@ alias lll "lsd -hAl --group-dirs first --date date --icon never"
 # Repos switcher
 alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | sort -u | fzf --tmux --exact) && nvim ."
 
+alias gpt "sgpt --model=gpt-4o"
+
 abbr --erase (abbr --list)
 abbr -g k kubectl
 abbr -g kx kubectx
 abbr -g kn kubens
-abbr -g kt kubetail
 abbr -g tf terraform
 abbr -g gs git status
 abbr -g gg lazygit

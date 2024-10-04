@@ -46,6 +46,7 @@ abbr -g bb br -hdps
 abbr -g bbb br ~/repositories
 abbr -g vv nvim .
 abbr -g av aws-vault exec
+abbr -g dd databricks
 
 # Enable starship prompt
 starship init fish | source

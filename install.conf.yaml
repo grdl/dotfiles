@@ -67,6 +67,12 @@
     ~/.config/k9s/skin.yml:
       path: dotfiles/k9s/skin.yml
 
+    ~/.config/zed/keymap.json:
+      path: dotfiles/zed/keymap.json
+
+    ~/.config/zed/settings.json:
+      path: dotfiles/zed/settings.json
+
 # Install fisher plugins from fish_plugins file
 - shell:
     - command: /opt/homebrew/bin/fish -c fisher update

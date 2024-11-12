@@ -1,0 +1,16 @@
+{
+    "window.commandCenter": 1,
+    "cursor.chat.smoothStreaming": true,
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "editor.fontFamily": "Mononoki Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 15,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.profiles.osx": {
+        "fish": {
+            "path": "/opt/homebrew/bin/fish",
+            "icon": "terminal"
+        },
+    },
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "vim.smartRelativeLine": true,
+}

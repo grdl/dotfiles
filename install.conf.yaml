@@ -73,6 +73,9 @@
     ~/.config/zed/settings.json:
       path: dotfiles/zed/settings.json
 
+    ~/Library/Application Support/Cursor/User/settings.json:
+      path: dotfiles/cursor/settings.json
+
 # Install fisher plugins from fish_plugins file
 - shell:
     - command: /opt/homebrew/bin/fish -c fisher update

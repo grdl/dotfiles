@@ -29,7 +29,7 @@ alias ll "lsd -hAl --group-dirs first --date relative --total-size --icon never"
 alias lll "lsd -hAl --group-dirs first --date date --icon never"
 
 # Repos switcher
-alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | sort -u | fzf --tmux --exact) && nvim ."
+alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | sort -u | fzf --exact) && code ."
 
 alias gpt "sgpt --model=gpt-4o"
 
@@ -50,3 +50,11 @@ abbr -g dd databricks
 
 # Enable starship prompt
 starship init fish | source
+
+# Enable zoxide (for directory jumping)
+zoxide init fish | source
+
+# Enable atuin shell history, but keep default up arrow behavior
+if status is-interactive
+    atuin init fish --disable-up-arrow | source
+end

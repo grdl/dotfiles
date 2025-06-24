@@ -76,6 +76,10 @@
     ~/Library/Application Support/Cursor/User/settings.json:
       path: dotfiles/cursor/settings.json
 
+    ~/.config/atuin/config.toml:
+      path: dotfiles/atuin/config.toml
+      force: true
+
 # Install fisher plugins from fish_plugins file
 - shell:
     - command: /opt/homebrew/bin/fish -c fisher update

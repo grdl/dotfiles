@@ -1,5 +1,5 @@
 {
-    "window.commandCenter": 1,
+    // "window.commandCenter": 1,
     "cursor.chat.smoothStreaming": true,
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "editor.fontFamily": "Mononoki Nerd Font, Menlo, Monaco, 'Courier New', monospace",
@@ -13,4 +13,24 @@
     },
     "terminal.integrated.defaultProfile.osx": "fish",
     "vim.smartRelativeLine": true,
+    "redhat.telemetry.enabled": false,
+    "projectManager.git.baseFolders": [
+        "~/repositories"
+    ],
+    "projectManager.git.maxDepthRecursion": -1,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "black-formatter.args": [
+        "--config",
+        "${workspaceFolder}/pyproject.toml"
+    ],
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "window.openFoldersInNewWindow": "on",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "files.autoSave": "onFocusChange",
+    "problems.visibility": false,
+
 }

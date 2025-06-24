@@ -24,6 +24,7 @@
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
 	editor = vim
+	hooksPath = /Users/grdl/.zapier/git-hooks
 [gitget]
 	root = ~/repositories
 [diff "sopsdiffer"]

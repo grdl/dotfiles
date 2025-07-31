@@ -11,9 +11,6 @@
 
 # Symlink dotfiles
 - link:
-    ~/.config/alacritty/alacritty.toml:
-      path: dotfiles/alacritty/alacritty.toml
-
     ~/.gitconfig:
       path: dotfiles/git/gitconfig
 
@@ -42,9 +39,6 @@
     ~/.local/bin/zen:
       path: dotfiles/starship/zen
 
-    ~/.tmux.conf:
-      path: dotfiles/tmux/tmux.conf
-
     ~/.vimrc:
       path: dotfiles/vim/vimrc
 
@@ -60,18 +54,8 @@
     ~/Library/KeyBindings/DefaultKeybinding.dict:
       path: dotfiles/macos/DefaultKeybinding.dict
 
-    ~/.config/broot/conf.hjson:
-      path: dotfiles/broot/conf.hjson
-      force: true
-
     ~/.config/k9s/skin.yml:
       path: dotfiles/k9s/skin.yml
-
-    ~/.config/zed/keymap.json:
-      path: dotfiles/zed/keymap.json
-
-    ~/.config/zed/settings.json:
-      path: dotfiles/zed/settings.json
 
     ~/Library/Application Support/Cursor/User/settings.json:
       path: dotfiles/cursor/settings.json

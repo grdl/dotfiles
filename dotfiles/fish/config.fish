@@ -25,8 +25,8 @@ set fish_greeting
 set -U nvm_default_version v18
 
 # Set aliases
-alias ll "lsd -hAl --group-dirs first --date relative --total-size --icon never"
-alias lll "lsd -hAl --group-dirs first --date date --icon never"
+alias lll "lsd -hAl --group-dirs first --date relative --total-size --icon never"
+alias ll "lsd -hAl --group-dirs first --date date --icon never"
 
 # Repos switcher
 alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | sort -u | fzf --exact) && code ."
@@ -41,12 +41,10 @@ abbr -g tf terraform
 abbr -g gs git status
 abbr -g gg lazygit
 abbr -g hh history merge
-abbr -g b br
-abbr -g bb br -hdps
-abbr -g bbb br ~/repositories
 abbr -g vv nvim .
 abbr -g av aws-vault exec
 abbr -g dd databricks
+abbr -g yy yazi
 
 # Enable starship prompt
 starship init fish | source

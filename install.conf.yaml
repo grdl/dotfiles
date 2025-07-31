@@ -80,6 +80,10 @@
       path: dotfiles/atuin/config.toml
       force: true
 
+    ~/.config/ghostty/config:
+      path: dotfiles/ghostty/config
+
+
 # Install fisher plugins from fish_plugins file
 - shell:
     - command: /opt/homebrew/bin/fish -c fisher update

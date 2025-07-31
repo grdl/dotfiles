@@ -32,5 +32,7 @@
     "git.confirmSync": false,
     "files.autoSave": "onFocusChange",
     "problems.visibility": false,
+    "testExplorer.useNativeTesting": true,
+    "editor.wordWrap": "on"
 
 }

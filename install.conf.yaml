@@ -67,6 +67,9 @@
     ~/.config/ghostty/config:
       path: dotfiles/ghostty/config
 
+    ~/.config/yazi:
+      path: dotfiles/yazi
+
 
 # Install fisher plugins from fish_plugins file
 - shell:

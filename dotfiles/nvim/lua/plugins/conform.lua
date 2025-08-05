@@ -13,4 +13,14 @@ return {
 			lsp_format = "fallback",
 		},
 	},
+	keys = {
+		{
+			"<leader>f",
+			function()
+				require("conform").format({ async = true })
+			end,
+			mode = "",
+			desc = "Format",
+		},
+	},
 }

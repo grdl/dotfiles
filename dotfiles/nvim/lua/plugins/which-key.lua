@@ -7,5 +7,10 @@ return {
   opts = {
 	  preset = "helix",
 	  delay = 0,
+
+    spec = {
+      {'<leader>g', group = 'Git', desc = 'Git'},
+      {'<leader>s', group = 'Search', desc = 'Search'},
+    }
   },
 }

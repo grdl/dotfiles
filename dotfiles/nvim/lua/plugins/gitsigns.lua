@@ -11,7 +11,7 @@ return {
   },
 
   keys = {
-    {'<leader>gb', '<cmd>GitSigns blame<cr>', desc = 'Git Blame'},
+    {'<leader>gb', '<cmd>Gitsigns blame<cr>', desc = 'Git Blame'},
   },
 }
 

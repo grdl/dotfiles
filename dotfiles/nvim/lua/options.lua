@@ -20,3 +20,4 @@ vim.opt.undofile = true
 vim.opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 vim.opt.wrap = false -- Disable line wrap
 vim.opt.timeoutlen = 100 -- Lower than default (1000) to quickly trigger which-key
+vim.opt.winborder = "rounded"

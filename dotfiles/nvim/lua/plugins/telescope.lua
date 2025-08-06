@@ -10,4 +10,16 @@ return {
 		{ "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 		{ "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
 	},
+
+	opts = {
+		defaults = {
+			mappings = {
+				i = {
+					-- Cycle through prompt history
+					["<S-Down>"] = require("telescope.actions").cycle_history_next,
+					["<S-Up>"] = require("telescope.actions").cycle_history_prev,
+				},
+			},
+		},
+	},
 }

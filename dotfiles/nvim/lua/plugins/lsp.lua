@@ -2,6 +2,9 @@ return {
 	{
 		"mason-org/mason.nvim", -- installs LSP servers
 		opts = {},
+		keys = {
+			{ "grd", vim.lsp.buf.definition, desc = "Go to definition" },
+		},
 	},
 	{
 		"neovim/nvim-lspconfig", -- configures LSPs
@@ -13,6 +16,7 @@ return {
 				"lua_ls",
 				"pyright",
 				"gopls",
+				"terraform-ls",
 			},
 		},
 	},

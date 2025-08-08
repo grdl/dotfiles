@@ -26,12 +26,3 @@ require("lazy").setup({
 })
 
 vim.cmd("colorscheme gruvbox")
---
--- vim.lsp.config("terraformls", {
---
--- 	init_options = {
--- 		experimentalFeatures = {
--- 			prefillRequiredFields = true,
--- 		},
--- 	},
--- })

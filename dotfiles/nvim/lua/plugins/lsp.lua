@@ -8,6 +8,16 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig", -- configures LSPs
+		init = function()
+			-- additional config for terraform-ls
+			vim.lsp.config("terraformls", {
+				init_options = {
+					experimentalFeatures = {
+						prefillRequiredFields = true,
+					},
+				},
+			})
+		end,
 	},
 	{
 		"mason-org/mason-lspconfig.nvim", -- links the two above

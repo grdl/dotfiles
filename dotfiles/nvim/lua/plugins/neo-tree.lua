@@ -75,6 +75,22 @@ return {
 					require("telescope.builtin").live_grep(getTelescopeOpts(state, path))
 				end,
 			},
+			default_component_configs = {
+				git_status = {
+					symbols = {
+						added = "+",
+						modified = "M",
+						deleted = "D",
+						renamed = "R",
+						untracked = "?",
+						-- We don't need those icons, as we use lazygit to manage status
+						ignored = "",
+						unstaged = "",
+						staged = "",
+						conflict = "",
+					},
+				},
+			},
 		},
 		keys = {
 			{ "<leader>e", "<cmd>Neotree toggle float reveal<cr>", desc = "File Explorer" },

@@ -11,6 +11,7 @@ return {
 		init = function()
 			-- additional config for terraform-ls
 			vim.lsp.config("terraformls", {
+				cmd = { "terraform-ls", "serve", "-log-file", "/dev/null" },
 				init_options = {
 					experimentalFeatures = {
 						prefillRequiredFields = true,

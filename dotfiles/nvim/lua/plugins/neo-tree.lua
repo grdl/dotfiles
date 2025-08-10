@@ -45,6 +45,7 @@ return {
 					["/"] = "noop", -- disable fuzzy finder
 					["F"] = "filter_on_submit",
 					["<C-f>"] = "clear_filter",
+					["h"] = "lazygit_history",
 				},
 			},
 			filesystem = {
@@ -73,6 +74,11 @@ return {
 						path = node:get_parent_id()
 					end
 					require("telescope.builtin").live_grep(getTelescopeOpts(state, path))
+				end,
+				lazygit_history = function(state)
+					local node = state.tree:get_node()
+					local path = node:get_id()
+					require("lazygit").lazygitfilter(path)
 				end,
 			},
 			default_component_configs = {

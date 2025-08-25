@@ -18,6 +18,7 @@ return {
 					-- Cycle through prompt history
 					["<S-Down>"] = require("telescope.actions").cycle_history_next,
 					["<S-Up>"] = require("telescope.actions").cycle_history_prev,
+                    ["<C-o>"] = require("telescope.actions").send_selected_to_qflist + require("telescope.actions").open_qflist,
 				},
 			},
 		},

@@ -3,7 +3,7 @@ return {
 	version = "1.6.0",
 	opts = {
 		keymap = {
-			preset = "enter",
+			preset = "super-tab",
 		},
 
 		completion = {

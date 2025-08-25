@@ -29,7 +29,7 @@ alias lll "lsd -hAl --group-dirs first --date relative --total-size --icon never
 alias ll "lsd -hAl --group-dirs first --date date --icon never"
 
 # Repos switcher
-alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | sort -u | fzf --exact) && code ."
+alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | sort -u | fzf --exact)"
 
 alias gpt "sgpt --model=gpt-4o"
 

@@ -1,11 +1,15 @@
 [user]  
     name = Greg Dlugoszewski
     email = greg.dlugoszewski@zapier.com
-    signingkey = /Users/grdl/.ssh/gitlab_rsa.pub
+    signingkey = /Users/grdl/.ssh/gitlab_rsa_signed.pub
 [gpg]
     format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /Users/grdl/.ssh/allowed_signers
 [commit]
     gpgsign = true
+[tag]
+  gpgSign = true
 [branch]
     autosetuprebase = always
 [pull]

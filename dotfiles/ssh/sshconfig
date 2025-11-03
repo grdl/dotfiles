@@ -3,4 +3,4 @@ Include /Users/grdl/.colima/ssh_config
 Host gitlab.com
     HostName gitlab.com
     User git
-    IdentityFile ~/.ssh/gitlab_rsa
+    IdentityFile ~/.ssh/gitlab_rsa_signed

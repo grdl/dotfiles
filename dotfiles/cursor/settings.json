@@ -33,6 +33,9 @@
     "files.autoSave": "onFocusChange",
     "problems.visibility": false,
     "testExplorer.useNativeTesting": true,
-    "editor.wordWrap": "on"
-
+    "editor.wordWrap": "on",
+    "terminal.integrated.persistentSessionScrollback": 1000,
+    "terminal.integrated.scrollback": 10000,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
 }

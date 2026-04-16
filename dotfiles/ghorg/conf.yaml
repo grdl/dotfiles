@@ -1,0 +1,20 @@
+GHORG_ABSOLUTE_PATH_TO_CLONE_TO: /Users/grdl/mirror/zapier/
+GHORG_GITLAB_TOKEN: /Users/grdl/mirror/zapier/.env
+
+GHORG_EXCLUDE_MATCH_PREFIX: all-of-zapier
+
+GHORG_SCM_TYPE: gitlab
+GHORG_CLONE_PROTOCOL: https
+GHORG_CLONE_TYPE: org
+
+GHORG_INCLUDE_SUBMODULES: false
+GHORG_SKIP_ARCHIVED: true
+GHORG_SKIP_FORKS: true
+
+GHORG_FETCH_ALL: false
+GHORG_PRESERVE_DIRECTORY_STRUCTURE: true
+
+GHORG_PRUNE: true # Removes repos that are no longer present in gitlab
+GHORG_NO_CLEAN: true # Prevents overwriting local in-progress changes
+
+GHORG_CONCURRENCY: 25

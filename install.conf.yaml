@@ -70,6 +70,8 @@
     ~/.config/yazi:
       path: dotfiles/yazi
 
+    ~/.config/ghorg/conf.yaml:
+      path: dotfiles/ghorg/conf.yaml
 
 # Install fisher plugins from fish_plugins file
 - shell:

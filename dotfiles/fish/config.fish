@@ -33,6 +33,10 @@ alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | so
 
 alias gpt "sgpt --model=gpt-4o"
 
+
+# zghorg
+alias zghorg "ghorg --config ~/.config/ghorg/conf.yaml"
+
 abbr --erase (abbr --list)
 abbr -g k kubectl
 abbr -g kx kubectx

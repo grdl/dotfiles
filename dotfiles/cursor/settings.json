@@ -12,7 +12,6 @@
         },
     },
     "terminal.integrated.defaultProfile.osx": "fish",
-    "vim.smartRelativeLine": true,
     "redhat.telemetry.enabled": false,
     "projectManager.git.baseFolders": [
         "~/repositories"
@@ -36,6 +35,7 @@
     "editor.wordWrap": "on",
     "terminal.integrated.persistentSessionScrollback": 1000,
     "terminal.integrated.scrollback": 10000,
+    "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+    "vim.smartRelativeLine": true
 }

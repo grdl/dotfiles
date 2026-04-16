@@ -8,7 +8,7 @@ font-size = 16
 macos-titlebar-style = tabs
 bold-is-bright = true
 
-theme = GruvboxDarkHard
+theme = Gruvbox Dark Hard
 mouse-hide-while-typing = true
 quick-terminal-position = center
 
@@ -16,10 +16,10 @@ window-inherit-working-directory = true
 
 # Tmux-like keybindings
 
-keybind = ctrl+h=new_split:left
-keybind = ctrl+j=new_split:down
-keybind = ctrl+k=new_split:up
-keybind = ctrl+l=new_split:right
+# keybind = ctrl+h=new_split:left
+# keybind = ctrl+j=new_split:down
+# keybind = ctrl+k=new_split:up
+# keybind = ctrl+l=new_split:right
 
 keybind = ctrl+a>left=goto_split:left
 keybind = ctrl+a>down=goto_split:down

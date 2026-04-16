@@ -59,3 +59,6 @@ end
 
 # Enable direnv
 direnv hook fish | source
+
+# Enable zdev
+zdev completion fish | source

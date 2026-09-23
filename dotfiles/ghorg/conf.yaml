@@ -15,6 +15,7 @@ GHORG_FETCH_ALL: false
 GHORG_PRESERVE_DIRECTORY_STRUCTURE: true
 
 GHORG_PRUNE: true # Removes repos that are no longer present in gitlab
-GHORG_NO_CLEAN: true # Prevents overwriting local in-progress changes
+GHORG_NO_CLEAN: false
+GHORG_PRUNE_NO_CONFIRM: true
 
 GHORG_CONCURRENCY: 25

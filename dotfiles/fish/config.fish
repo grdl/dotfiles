@@ -31,14 +31,12 @@ alias ll "lsd -hAl --group-dirs first --date date --icon never"
 # Repos switcher
 alias rr "cd (fd .git --type d --hidden ~/repositories --exec dirname {} \; | sort -u | fzf --exact)"
 
-alias gpt "sgpt --model=gpt-4o"
-
-
 # zghorg
 alias zghorg "ghorg --config ~/.config/ghorg/conf.yaml"
 
 abbr --erase (abbr --list)
 abbr -g k kubectl
+abbr -g kk kubectl
 abbr -g kx kubectx
 abbr -g kn kubens
 abbr -g tf terraform
@@ -49,6 +47,8 @@ abbr -g vv nvim .
 abbr -g av aws-vault exec
 abbr -g dd databricks
 abbr -g yy yazi
+abbr -g hq cd ~/repositories/github.com/grdl/hq
+abbr -g oo "cd ~/repositories/gitlab.com/greg.dlugoszewski/brain-v2 && omp"
 
 # Enable starship prompt
 starship init fish | source

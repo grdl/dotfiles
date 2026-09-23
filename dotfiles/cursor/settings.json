@@ -36,6 +36,12 @@
     "terminal.integrated.persistentSessionScrollback": 1000,
     "terminal.integrated.scrollback": 10000,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "vim.smartRelativeLine": true
+    "window.autoDetectColorScheme": false,
+    "dotnet.quickInfo.showRemarksInQuickInfo": true,
+    "dotnet.formatting.organizeImportsOnFormat": true,
+    "dotnet.codeLens.enableReferencesCodeLens": false,
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.focusView": false,
+    "cursor.composer.queueMessageDefaultBehavior": "steer",
+    "accessibility.signalOptions.volume": 0
 }

@@ -13,6 +13,7 @@ mouse-hide-while-typing = true
 quick-terminal-position = center
 
 window-inherit-working-directory = true
+split-inherit-working-directory = true
 
 # Tmux-like keybindings
 

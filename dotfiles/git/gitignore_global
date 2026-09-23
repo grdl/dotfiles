@@ -17,3 +17,7 @@ target/
 *.swp
 
 __pycache__/
+
+**/.claude/settings.local.json
+
+**/.claude/.cc-writes/
